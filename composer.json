@@ -1,0 +1,32 @@
+{
+    "name": "mestiaque/kazitds",
+    "description": "Kazitds module for Laravel (by M. Estiaque Ahmed Khan)",
+    "type": "library",
+    "keywords": [
+        "Laravel",
+        "Kazitds",
+        "Estiaque"
+    ],
+    "authors": [
+        {
+            "name": "M. Estiaque Ahmed Khan",
+            "email": "info@mestiaque.com",
+            "homepage": "https://mestiaque.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ME\\Kazitds\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ME\\Kazitds\\KazitdsServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
