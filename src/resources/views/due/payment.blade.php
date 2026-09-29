@@ -62,7 +62,7 @@
             <div class="card-header p-1 bg-encodex-secondary text-white">
                 <h5 class="mb-0 d-flex justify-content-between align-items-center">
                     <span>@lang('kazitds::kazitds.Make Payment')</span>
-                    <span class="badge bg-danger fs-6 py-2">
+                    <span class="badge bg-danger text-white fs-6 py-2">
                         @lang('kazitds::kazitds.Due'): {{ toBanglaNumber($customer->due_amount ?? 0, 2) }}
                     </span>
                 </h5>

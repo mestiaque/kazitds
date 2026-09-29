@@ -1,16 +1,17 @@
 <?php
 
 return [
-    [
-        'title'      => 'Dashboard',
-        'icon'       => 'fas fa-tachometer-alt',
-        'route'      => 'dashboard',
-        'icon_color' => 'text-encodex-secondary',
-    ],
+   //  [
+   //      'title'      => 'Dashboard',
+   //      'icon'       => 'fas fa-tachometer-alt',
+   //      'route'      => 'dashboard',
+   //      'icon_color' => 'text-encodex-secondary',
+   //  ],
     [
         'title'      => 'Master Data',
         'icon'       => 'fas fa-database',
         'icon_color' => 'text-primary',
+        'sl'         => 2,
         'children'   => [
             [
                'icon'       => 'fas fa-box',
@@ -60,6 +61,7 @@ return [
         'title'      => 'Transactions',
         'icon'       => 'fas fa-exchange-alt',
         'icon_color' => 'text-warning',
+        'sl'         => 3,
           // 'active'  => true,
         'children' => [
             [
@@ -89,6 +91,7 @@ return [
         'title'      => 'Reports',
         'icon'       => 'fas fa-chart-bar',
         'icon_color' => 'text-info',
+         'sl'         => 4,
         'children'   => [
             [
                'icon'       => 'fas fa-warehouse',
@@ -132,55 +135,6 @@ return [
                'permit'     => 'sms_report.view',
                'icon_color' => 'text-info',
             ],
-        ]
-    ],
-    [
-        'title'      => 'Admin',
-        'icon'       => 'fas fa-cog',
-        'icon_color' => 'text-danger',
-        'children'   => [
-            [
-                'permit'     => 'setting.edit',
-                'title'      => 'Settings',
-                'icon'       => 'fas fa-cog',
-                'route'      => 'settings.edit',
-                'icon_color' => 'text-danger',
-            ],
-            // [
-            //     'permit'     => 'setting.configurations',
-            //     'title'      => 'Configurations',
-            //     'icon'       => 'fas fa-wrench',
-            //     'route'      => 'configurations.edit',
-            //     'icon_color' => 'text-danger',
-            // ],
-            // [
-            //    'icon'       => 'fas fa-trash-alt',
-            //    'title'      => 'Clear Data',
-            //    'route'      => 'data.clear.form',
-            //    'permit'     => 'admin.view',
-            //    'icon_color' => 'text-danger',
-            // ],
-        ]
-    ],
-    [
-        'title'      => 'User Management',
-        'icon'       => 'fas fa-users-cog',
-        'icon_color' => 'text-success',
-        'children'   => [
-            [
-            'icon'       => 'fas fa-users',
-            'title'      => 'Users',
-            'route'      => 'users.index',
-            'permit'     => 'user.view',
-            'icon_color' => 'text-success',
-            ],
-            [
-            'icon'       => 'fas fa-user-shield',
-            'title'      => 'Roles',
-            'route'      => 'roles.index',
-            'permit'     => 'role.view',
-            'icon_color' => 'text-success',
-            ]
         ]
     ],
 ];

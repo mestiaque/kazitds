@@ -244,7 +244,7 @@
                                     <td>{{ $customer->phone ? toBanglaPhone($customer->phone) : '--' }}</td>
                                     <td class="text-end fw-bold">{{ $tk }} {{ toBanglaNumber($customer->due_amount, 2) }}</td>
                                     <td class="text-end">
-                                        <a href="{{ route('due.payment', $customer->id) }}" class="btn btn-sm btn-outline-success py-0">@lang('kazitds::kazitds.Collect')</a>
+                                        <a href="{{ route('due.payment', $customer->id) }}" class="btn btn-sm btn-encodex-payment py-0">@lang('kazitds::kazitds.Collect')</a>
                                     </td>
                                 </tr>
                             @empty

@@ -118,11 +118,11 @@
                             <td class="text-end font-weight-bold">
 
                                 @if($variant->current_stock <= 0)
-                                    <span class="badge bg-danger">{{ toBanglaNumber($variant->current_stock) }}</span>
+                                    <span class="badge bg-danger text-white">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @elseif($variant->current_stock < 5)
                                     <span class="badge bg-warning">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @else
-                                    <span class="badge bg-success">{{ toBanglaNumber($variant->current_stock) }}</span>
+                                    <span class="badge bg-success text-white">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @endif
                             </td>
                             <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($variant->stock_value, 2) }}</td>

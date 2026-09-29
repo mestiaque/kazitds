@@ -99,7 +99,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <span class="badge bg-secondary">{{ toBanglaNumber($sale->items->count()) }}</span>
+                                <span class="badge bg-secondary text-white">{{ toBanglaNumber($sale->items->count()) }}</span>
                             </td>
                             <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($sale->total_amount, 2) }}</td>
                             @if(get_setting('show_discount_option'))
@@ -115,17 +115,17 @@
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center" style="">
                                     <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-encodex-show btn-sm " title="@lang("kazitds::kazitds.View")">
-                                        <i class="fas fa-eye ms-1 mt-1 me-1"></i>
+                                        <i class="fas fa-eye "></i>
                                     </a>
 
                                     @if(!$sale->returns()->exists())
                                         <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-encodex-edit btn-sm " title="@lang("kazitds::kazitds.Edit")">
-                                            <i class="fas fa-edit ms-1 mt-1 me-1"></i>
+                                            <i class="fas fa-edit "></i>
                                         </a>
                                     @endif
 
                                     <a href="{{ route('sales.print-invoice', $sale->id) }}" target="_blank" class="btn btn-encodex-print btn-sm " title="@lang("kazitds::kazitds.Print")">
-                                        <i class="fas fa-print ms-1 mt-1 me-1"></i>
+                                        <i class="fas fa-print "></i>
                                     </a>
 
                                     @if(!$sale->returns()->exists())
@@ -134,7 +134,7 @@
                                             @method('DELETE')
                                             <button title="@lang("kazitds::kazitds.Delete")" onclick="return confirm('{{ __('kazitds::kazitds.Are you sure you want to delete this?') }}')"
                                                 type="submit" class="btn btn-sm btn-encodex-delete ">
-                                                <i class="fas fa-trash ms-1 mt-1 me-1"></i>
+                                                <i class="fas fa-trash "></i>
                                             </button>
                                         </form>
                                     @endif

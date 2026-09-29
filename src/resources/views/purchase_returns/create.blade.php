@@ -1,6 +1,6 @@
 @extends('me::master')
 
-@section('title', 'Create Purchase Return')
+@section('title', __('kazitds::kazitds.Create Purchase Return'))
 
 @section('content')
 <div class="container-fluid">
@@ -8,10 +8,10 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Create Purchase Return</h3>
+                    <h3 class="card-title">@lang('kazitds::kazitds.Create Purchase Return')</h3>
                     <div class="card-tools">
                         <a href="{{ route('purchase-returns.index') }}" class="btn btn-default">
-                            <i class="fas fa-arrow-left"></i> Back to List
+                            <i class="fas fa-arrow-left"></i> @lang('kazitds::kazitds.Back to List')
                         </a>
                     </div>
                 </div>
@@ -21,9 +21,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="purchase_id">Purchase *</label>
+                                    <label for="purchase_id">@lang('kazitds::kazitds.Purchase *')</label>
                                     <select class="form-control @error('purchase_id') is-invalid @enderror" id="purchase_id" name="purchase_id" required>
-                                        <option value="">Select Purchase</option>
+                                        <option value="">@lang('kazitds::kazitds.Select Purchase')</option>
                                         @foreach($purchases as $purchase)
                                         <option value="{{ $purchase->id }}" {{ old('purchase_id') == $purchase->id ? 'selected' : '' }}>
                                             #{{ $purchase->id }} - {{ $purchase->supplier->name ?? __('kazitds::kazitds.N/A') }} ({{ $purchase->purchase_date->format('d M Y') }})
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="return_date">Return Date *</label>
+                                    <label for="return_date">@lang('kazitds::kazitds.Return Date *')</label>
                                     <input type="date" class="form-control @error('return_date') is-invalid @enderror"
                                            id="return_date" name="return_date" value="{{ old('return_date', date('Y-m-d')) }}" required>
                                     @error('return_date')
@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="total_amount">Total Return Amount *</label>
+                                    <label for="total_amount">@lang('kazitds::kazitds.Total Return Amount *')</label>
                                     <input type="number" class="form-control @error('total_amount') is-invalid @enderror"
                                            id="total_amount" name="total_amount" value="{{ old('total_amount') }}"
                                            step="0.01" min="0" required>
@@ -63,9 +63,9 @@
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select class="form-control @error('status') is-invalid @enderror" id="status" name="status">
-                                        <option value="pending" {{ old('status', 'pending') == 'pending' ? 'selected' : '' }}>Pending</option>
-                                        <option value="approved" {{ old('status') == 'approved' ? 'selected' : '' }}>Approved</option>
-                                        <option value="rejected" {{ old('status') == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                                        <option value="pending" {{ old('status', 'pending') == 'pending' ? 'selected' : '' }}>@lang('kazitds::kazitds.Pending')</option>
+                                        <option value="approved" {{ old('status') == 'approved' ? 'selected' : '' }}>@lang('kazitds::kazitds.Approved')</option>
+                                        <option value="rejected" {{ old('status') == 'rejected' ? 'selected' : '' }}>@lang('kazitds::kazitds.Rejected')</option>
                                     </select>
                                     @error('status')
                                         <span class="invalid-feedback">{{ $message }}</span>
@@ -75,9 +75,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="reason">Reason for Return</label>
+                            <label for="reason">@lang('kazitds::kazitds.Reason for Return')</label>
                             <textarea class="form-control @error('reason') is-invalid @enderror"
-                                      id="reason" name="reason" rows="3" placeholder="Enter reason for return">{{ old('reason') }}</textarea>
+                                      id="reason" name="reason" rows="3" placeholder="@lang('kazitds::kazitds.Enter reason for return')">{{ old('reason') }}</textarea>
                             @error('reason')
                                 <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
@@ -86,7 +86,7 @@
                         <div class="form-group">
                             <label for="notes">Notes</label>
                             <textarea class="form-control @error('notes') is-invalid @enderror"
-                                      id="notes" name="notes" rows="3" placeholder="Additional notes">{{ old('notes') }}</textarea>
+                                      id="notes" name="notes" rows="3" placeholder="@lang('kazitds::kazitds.Additional notes')">{{ old('notes') }}</textarea>
                             @error('notes')
                                 <span class="invalid-feedback">{{ $message }}</span>
                             @enderror
@@ -94,10 +94,10 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-encodex">
-                            <i class="fas fa-save"></i> Create Purchase Return
+                            <i class="fas fa-save"></i> @lang('kazitds::kazitds.Create Purchase Return')
                         </button>
                         <a href="{{ route('purchase-returns.index') }}" class="btn btn-encodex-cancel">
-                            <i class="fas fa-times"></i> Cancel
+                            <i class="fas fa-times"></i> @lang('kazitds::kazitds.Cancel')
                         </a>
                     </div>
                 </form>

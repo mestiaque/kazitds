@@ -80,12 +80,12 @@
                 <td class="d-flex justify-content-center">
                   <a title="@lang("kazitds::kazitds.View")" class="btn btn-sm btn-encodex-show "
                       href="{{ route('purchases.show', $purchase->id) }}">
-                      <i class="fas fa-eye ms-1 mt-1 me-1"></i>
+                      <i class="fas fa-eye "></i>
                   </a>
 
                   <a title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit "
                       href="{{ route('purchases.edit', $purchase->id) }}">
-                      <i class="fas fa-edit ms-1 mt-1 me-1"></i>
+                      <i class="fas fa-edit "></i>
                   </a>
 
                   <form action="{{ route('purchases.destroy', $purchase->id) }}" method="POST">
@@ -93,7 +93,7 @@
                     @method('DELETE')
                         <button title="@lang("kazitds::kazitds.Delete")" onclick="return confirm('{{ __('kazitds::kazitds.Are you sure you want to delete this?') }}')"
                             type="submit" class="btn btn-sm btn-encodex-delete p-0 px-1 me-0">
-                            <i class="fas fa-trash ms-1 mt-1 me-1"></i>
+                            <i class="fas fa-trash "></i>
                         </button>
                   </form>
                 </td>

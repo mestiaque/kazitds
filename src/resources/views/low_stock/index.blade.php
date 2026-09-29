@@ -36,7 +36,7 @@
                                 <td>{{ $variant->product->name ?? '-' }}</td>
                                 <td>{{ $variant->brand->name ?? '-' }} - {{ $variant->pack->name ?? '-' }}</td>
                                 <td>
-                                    <span class="badge bg-danger">
+                                    <span class="badge bg-danger text-white">
                                         {{ toBanglaNumber($variant->getCurrentStock()) }}
                                     </span>
                                 </td>

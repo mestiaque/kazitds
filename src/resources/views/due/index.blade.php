@@ -106,14 +106,14 @@
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center" style="">
                                     <a href="{{ route('due.payment.store', $customer->id) }}" class="btn btn-encodex-payment btn-sm " title="@lang("kazitds::kazitds.Payment")">
-                                        <i class="fas fa-money-bill-wave ms-1 mt-1 me-1"></i>
+                                        <i class="fas fa-money-bill-wave "></i>
                                     </a>
                                     @if(isset(get_setting('sms_permit')['reminder']) && get_setting('sms_permit')['reminder'] == 1)
                                         <form action="{{ route('due.notify.send', $customer->id) }}" method="POST" class="d-inline-flex"
                                             onsubmit="return confirm('{{ __('kazitds::kazitds.Are you sure you want to send this reminder?') }}')">
                                             @csrf
                                             <button type="submit" class="btn btn-encodex-print btn-sm " title="@lang('kazitds::kazitds.Reminder')">
-                                                <i class="fas fa-bell ms-1 mt-1 me-1"></i>
+                                                <i class="fas fa-bell "></i>
                                             </button>
                                         </form>
                                     @endif

@@ -57,7 +57,7 @@
                 <td class="d-flex justify-content-center">
                   <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit "
                       data-bs-toggle="modal" data-bs-target="#editModal{{ $customer->id }}">
-                      <i class="fas fa-edit ms-1 mt-1 me-1"></i>
+                      <i class="fas fa-edit "></i>
                   </button>
 
                   <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
@@ -65,7 +65,7 @@
                     @method('DELETE')
                         <button title="@lang("kazitds::kazitds.Delete")" onclick="return confirm('{{ __('kazitds::kazitds.Are you sure you want to delete this?') }}')"
                             type="submit" class="btn btn-sm btn-encodex-delete ">
-                            <i class="fas fa-trash ms-1 mt-1 me-1"></i>
+                            <i class="fas fa-trash "></i>
                         </button>
                   </form>
                 </td>

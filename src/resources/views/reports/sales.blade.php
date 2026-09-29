@@ -99,7 +99,7 @@
                                 <td><strong>{{ $row->variant->product->name ?? __('kazitds::kazitds.N/A') }}</strong></td>
                                 <td>{{ $row->variant->brand->name ?? '--' }}</td>
                                 <td>{{ $row->variant->pack->name ?? '--' }}</td>
-                                <td class="text-center"><span class="badge bg-secondary">{{ toBanglaNumber($row->invoice_count) }}</span></td>
+                                <td class="text-center"><span class="badge bg-secondary text-white">{{ toBanglaNumber($row->invoice_count) }}</span></td>
                                 <td class="text-end">{{ toBanglaNumber($row->total_quantity) }}</td>
                                 <td class="text-end">{{ $tk }} {{ toBanglaNumber($row->avg_price, 2) }}</td>
                                 <td class="text-end fw-bold">{{ $tk }} {{ toBanglaNumber($row->total_amount, 2) }}</td>
@@ -161,7 +161,7 @@
                                         <span class="text-muted">@lang('kazitds::kazitds.--')</span>
                                     @endif
                                 </td>
-                                <td class="text-center"><span class="badge bg-secondary">{{ toBanglaNumber($sale->items->count()) }}</span></td>
+                                <td class="text-center"><span class="badge bg-secondary text-white">{{ toBanglaNumber($sale->items->count()) }}</span></td>
                                 @if(get_setting('show_discount_option'))
                                     <td class="text-end">{{ $tk }} {{ toBanglaNumber($sale->total_amount, 2) }}</td>
                                     <td class="text-end {{ $sale->discount > 0 ? 'text-danger' : 'text-muted' }}">{{ $tk }} {{ toBanglaNumber($sale->discount, 2) }}</td>

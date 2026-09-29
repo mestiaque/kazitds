@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name', 'ShopKeeper') }} | Expired</title>
+    <title>{{ config('app.name', 'ShopKeeper') }} | @lang('kazitds::kazitds.Expired')</title>
     <link rel="icon" href="{{ asset('assets/img/favicon/Encodex.ico') }}" type="image/x-icon">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -101,15 +101,15 @@
         </div>
 
         <!-- Expired Code -->
-        <div class="error-code animate__animated animate__fadeInDown">EXPIRED</div>
+        <div class="error-code animate__animated animate__fadeInDown">@lang('kazitds::kazitds.EXPIRED')</div>
 
         <!-- Error message -->
         <p class="error-message animate__animated animate__fadeInUp mb-4">
-            Your software access has expired.
+            @lang('kazitds::kazitds.Your software access has expired.')
         </p>
 
         <p class="support-message animate__animated animate__fadeInUp">
-            Please contact support to renew your service.
+            @lang('kazitds::kazitds.Please contact support to renew your service.')
         </p>
     </div>
 
