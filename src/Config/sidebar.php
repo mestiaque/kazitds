@@ -1,12 +1,12 @@
 <?php
 
 return [
-   //  [
-   //      'title'      => 'Dashboard',
-   //      'icon'       => 'fas fa-tachometer-alt',
-   //      'route'      => 'dashboard',
-   //      'icon_color' => 'text-encodex-secondary',
-   //  ],
+    [
+        'title'      => 'Dashboard',
+        'icon'       => 'fas fa-tachometer-alt',
+        'route'      => 'dashboard',
+        'icon_color' => 'text-encodex-secondary',
+    ],
     [
         'title'      => 'Master Data',
         'icon'       => 'fas fa-database',
