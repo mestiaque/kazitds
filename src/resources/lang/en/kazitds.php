@@ -553,4 +553,6 @@ return [
     'Your software access has expired.' => 'Your software access has expired.',
     'Please contact support to renew your service.' => 'Please contact support to renew your service.',
     'Error loading sale items. Please check console for details.' => 'Error loading sale items. Please check console for details.',
+    'Invoice not found' => 'Invoice not found',
+    'This invoice link is invalid or no longer available.' => 'This invoice link is invalid or no longer available.',
 ];

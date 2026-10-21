@@ -3,12 +3,9 @@
 @section('title', trans('kazitds::kazitds.Dashboard'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.create'),
-      'text' => __('kazitds::kazitds.New Sale'),
-      'class' => 'btn-encodex-create'
-  ])
-  @endcomponent
+  <a href="{{ route('sales.create') }}" class="btn btn-sm btn-encodex-create">
+      <i class="fas fa-plus"></i> @lang('kazitds::kazitds.New Sale')
+  </a>
 @endpush
 
 @php

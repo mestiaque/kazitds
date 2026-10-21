@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Sale extends Model
 {
@@ -30,6 +31,14 @@ class Sale extends Model
     protected $casts = [
         'sale_date' => 'datetime',
     ];
+
+    protected static function booted(): void
+    {
+        // Every sale gets a random token for its public invoice link
+        static::creating(function (Sale $sale) {
+            $sale->public_token ??= Str::random(32);
+        });
+    }
 
     public function customer(): BelongsTo
     {

@@ -3,8 +3,7 @@
 namespace ME\Kazitds\Http\Controllers;
 
 use ME\Http\Controllers\Controller;
-use ME\Kazitds\Models\Role;
-use App\Models\Permission;
+use ME\Models\Role;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use ME\Kazitds\Models\RolePermission;

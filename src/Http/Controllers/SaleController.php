@@ -10,7 +10,7 @@ use ME\Kazitds\Models\PaymentHistory;
 use ME\Kazitds\Models\ProductVariant;
 use ME\Kazitds\Models\Sale;
 use ME\Kazitds\Models\SaleItem;
-use ME\Kazitds\Models\Setting;
+use ME\Models\Setting;
 use ME\Kazitds\Http\Services\CustomerSaleLedgerService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

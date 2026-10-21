@@ -140,13 +140,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-encodex">
-                            <i class="fas fa-save"></i> @lang('kazitds::kazitds.Create Sale Return')
-                        </button>
+                    <div class="card-footer text-end">
                         <a href="{{ route('sale-returns.index') }}" class="btn btn-encodex-cancel">
                             <i class="fas fa-times"></i> @lang('kazitds::kazitds.Cancel')
                         </a>
+                        <button type="submit" class="btn btn-savex">
+                            <i class="fas fa-save"></i> @lang('kazitds::kazitds.Create Sale Return')
+                        </button>
                     </div>
                 </form>
             </div>

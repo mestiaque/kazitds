@@ -77,7 +77,7 @@
               <td>{{ $variant->brand->name ?? '--' }}</td>
               <td>{{ $variant->pack->name }}</td>
               <td>
-                    <span class="badge {{ $variant->is_active ? 'bg-success' : 'bg-danger' }}">
+                    <span class="badge {{ $variant->is_active ? 'bg-success-subtle text-success' : 'bg-danger-subtle text-danger' }}">
                     {{ $variant->is_active ? __('kazitds::kazitds.Active') : __('kazitds::kazitds.Inactive') }}
                     </span>
               </td>
@@ -118,7 +118,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-encodex-cancel" data-bs-dismiss="modal">@lang('kazitds::kazitds.Cancel')</button>
-          <button type="submit" class="btn btn-sm btn-encodex-save">@lang('kazitds::kazitds.Create Product Variant')</button>
+          <button type="submit" class="btn btn-sm btn-savex">@lang('kazitds::kazitds.Create Product Variant')</button>
         </div>
       </form>
     </div>
@@ -140,7 +140,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-encodex-cancel" data-bs-dismiss="modal">@lang('kazitds::kazitds.Cancel')</button>
-            <button type="submit" class="btn btn-sm btn-encodex-save">@lang('kazitds::kazitds.Update Product Variant')</button>
+            <button type="submit" class="btn btn-sm btn-savex">@lang('kazitds::kazitds.Update Product Variant')</button>
           </div>
         </form>
       </div>

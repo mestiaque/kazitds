@@ -6,6 +6,7 @@ use ME\Http\Controllers\Controller;
 use ME\Kazitds\Models\Purchase;
 use ME\Kazitds\Models\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use ME\Kazitds\Models\ProductVariant;
 
 class PurchaseController extends Controller
@@ -21,7 +22,7 @@ class PurchaseController extends Controller
 
     public function index(Request $request)
     {
-        $query = Purchase::with('productVariant.product', 'productVariant.brand', 'productVariant.pack', 'supplier');
+        $query = Purchase::with('productVariant.product', 'productVariant.brand', 'productVariant.pack', 'supplier', 'creator', 'updater');
 
         // Apply filters
         if ($request->has('product_variant') && $request->product_variant) {
@@ -36,18 +37,25 @@ class PurchaseController extends Controller
             $query->whereDate('purchase_date', '<=', $request->end_date);
         }
 
-        $purchases = $query->orderBy('purchase_date', 'desc')->paginate(get_setting('pagination', 10))
-;
+        $purchases = $query->orderBy('purchase_date', 'desc')->orderByDesc('id')
+            ->paginate(get_setting('pagination', 10))
+            ->withQueryString();
         $productVariants = ProductVariant::with('product', 'brand', 'pack')->get();
+        $suppliers = Supplier::all();
 
-        return view('kazitds::purchases.index', compact('purchases', 'productVariants'));
+        // A purchase opened by ?show= / ?edit= gets its modals even when it's on another page
+        $focusId = $request->input('show', $request->input('edit'));
+        $focusItem = $focusId
+            ? Purchase::with('productVariant.product', 'productVariant.brand', 'productVariant.pack', 'supplier', 'creator', 'updater')->find($focusId)
+            : null;
+
+        return view('kazitds::purchases.index', compact('purchases', 'productVariants', 'suppliers', 'focusItem'));
     }
 
     public function create()
     {
-        $productVariants = ProductVariant::with('product', 'brand', 'pack')->get();
-        $suppliers = Supplier::all();
-        return view('kazitds::purchases.create', compact('productVariants', 'suppliers'));
+        // Add happens in a modal on the purchase list
+        return redirect()->route('purchases.index', array_filter(['create' => 1, 'product_variant_id' => request('product_variant_id')]));
     }
 
     public function store(Request $request)
@@ -64,27 +72,23 @@ class PurchaseController extends Controller
         $data['total_price'] = $request->quantity * $request->price_per_unit;
         $data['created_by'] = auth()->id();
 
-        // Generate sequential purchase number
-        $lastPurchase = Purchase::orderBy('id', 'desc')->first();
-        $nextNumber = $lastPurchase ? intval($lastPurchase->id) + 1 : 1;
-        $data['purchase_number'] = str_pad($nextNumber, 8, '0', STR_PAD_LEFT);
-
-        Purchase::create($data);
+        // Purchase number comes from the row's own id, so two purchases saved at once can't share a number
+        DB::transaction(function () use ($data) {
+            $purchase = Purchase::create($data);
+            $purchase->update(['purchase_number' => str_pad($purchase->id, 8, '0', STR_PAD_LEFT)]);
+        });
         return redirect()->route('purchases.index')
             ->with('success', __('kazitds::kazitds.Purchase recorded successfully.'));
     }
 
     public function show(Purchase $purchase)
     {
-        $purchase->load('productVariant.product', 'productVariant.brand', 'productVariant.pack');
-        return view('kazitds::purchases.show', compact('purchase'));
+        return redirect()->route('purchases.index', ['show' => $purchase->id]);
     }
 
     public function edit(Purchase $purchase)
     {
-        $productVariants = ProductVariant::with('product', 'brand', 'pack')->get();
-        $suppliers = Supplier::all();
-        return view('kazitds::purchases.edit', compact('purchase', 'productVariants', 'suppliers'));
+        return redirect()->route('purchases.index', ['edit' => $purchase->id]);
     }
 
     public function update(Request $request, Purchase $purchase)

@@ -3,15 +3,9 @@
 @section('title', trans('kazitds::kazitds.Product Variant Wise Sales Report'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('product_variant_sales.reports.print') . '?' . http_build_query(request()->query()),
-      'text' => __('kazitds::kazitds.Print'),
-      'bg' => 'info',
-      'icon' => 'print',
-      'attribute' => 'target="_blank"',
-      'class' => 'btn-encodex-print2'
-  ])
-  @endcomponent
+  <a href="{{ route('product_variant_sales.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+      <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
+  </a>
 @endpush
 
 @section('content')

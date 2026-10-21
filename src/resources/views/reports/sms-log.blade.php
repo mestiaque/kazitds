@@ -74,7 +74,7 @@
                         <td class="text-nowrap">{{ toBanglaPhone($log->to) }}</td>
                         <td style="white-space: pre-line; min-width: 260px">{{ $log->message }}</td>
                         <td>
-                            <span class="badge {{ $log->status === 'success' ? 'bg-success' : 'bg-danger' }}">
+                            <span class="badge {{ $log->status === 'success' ? 'bg-success-subtle text-success' : 'bg-danger-subtle text-danger' }}">
                                 <i class="fas fa-{{ $log->status === 'success' ? 'check' : 'times' }}"></i>
                                 @lang('me::me.sms_status_' . $log->status)
                             </span>

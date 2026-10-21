@@ -3,15 +3,9 @@
 @section('title', trans('kazitds::kazitds.Stock Report'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('stock.reports.print'),
-      'text' => __('kazitds::kazitds.Print'),
-      'bg' => 'info',
-      'icon' => 'print',
-      'attributes' => 'target="_blank"',
-      'class' => 'btn-encodex-print2'
-  ])
-  @endcomponent
+  <a href="{{ route('stock.reports.print') }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+      <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
+  </a>
 @endpush
 
 @section('content')
@@ -30,11 +24,11 @@
                 <!-- Summary Badges Column -->
                 <div class="col-md-6 col-12 text-md-end">
                     <div class="summary-badges">
-                        <span class="badge badge-sm bg-light badge-pill p-1 shadow-sm me-2 text-dark">
+                        <span class="badge badge-sm bg-light-subtle badge-pill p-1 shadow-sm me-2 text-dark border">
                             <i class="fas fa-money-bill-wave me-1"></i> @lang('kazitds::kazitds.Total Value'):
                             <span class="font-weight-bold text-info">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($totalStockValue, 2) }}</span>
                         </span>
-                        <span class="badge badge-sm bg-light badge-pill p-1 shadow-sm text-dark">
+                        <span class="badge badge-sm bg-light-subtle badge-pill p-1 shadow-sm text-dark border">
                             <i class="fas fa-boxes me-1"></i> @lang('kazitds::kazitds.Total Items'):
                             <span class="font-weight-bold text-primary">{{ toBanglaNumber($totalItems) }}</span>
                         </span>
@@ -118,11 +112,11 @@
                             <td class="text-end font-weight-bold">
 
                                 @if($variant->current_stock <= 0)
-                                    <span class="badge bg-danger text-white">{{ toBanglaNumber($variant->current_stock) }}</span>
+                                    <span class="badge bg-danger-subtle text-danger">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @elseif($variant->current_stock < 5)
-                                    <span class="badge bg-warning">{{ toBanglaNumber($variant->current_stock) }}</span>
+                                    <span class="badge bg-warning-subtle text-warning-emphasis">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @else
-                                    <span class="badge bg-success text-white">{{ toBanglaNumber($variant->current_stock) }}</span>
+                                    <span class="badge bg-success-subtle text-success">{{ toBanglaNumber($variant->current_stock) }}</span>
                                 @endif
                             </td>
                             <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($variant->stock_value, 2) }}</td>

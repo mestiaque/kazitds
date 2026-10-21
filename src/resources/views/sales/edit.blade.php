@@ -3,12 +3,9 @@
 @section('title', trans('kazitds::kazitds.Edit Sale'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.index'),
-      'text' => __('kazitds::kazitds.Sales List'),
-      'class' => 'btn-encodex-list'
-  ])
-  @endcomponent
+  <a href="{{ route('sales.index') }}" class="btn btn-sm btn-encodex-list">
+      <i class="fas fa-list"></i> @lang('kazitds::kazitds.Sales List')
+  </a>
 @endpush
 
 @push('css')

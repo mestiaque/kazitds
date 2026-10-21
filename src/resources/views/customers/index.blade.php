@@ -93,7 +93,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-encodex-cancel" data-bs-dismiss="modal">@lang('kazitds::kazitds.Cancel')</button>
-          <button type="submit" class="btn btn-sm btn-encodex-save">@lang('kazitds::kazitds.Create Customer')</button>
+          <button type="submit" class="btn btn-sm btn-savex">@lang('kazitds::kazitds.Create Customer')</button>
         </div>
       </form>
     </div>
@@ -115,7 +115,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-encodex-cancel" data-bs-dismiss="modal">@lang('kazitds::kazitds.Cancel')</button>
-            <button type="submit" class="btn btn-sm btn-encodex-save">@lang('kazitds::kazitds.Update Customer')</button>
+            <button type="submit" class="btn btn-sm btn-savex">@lang('kazitds::kazitds.Update Customer')</button>
           </div>
         </form>
       </div>

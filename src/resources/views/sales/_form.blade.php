@@ -120,7 +120,7 @@
                                     </select>
                                 </td>
                                 <td class="text-center">
-                                    <span class="stock-display badge bg-info mt-1">{{ $item->productVariant->getCurrentStock() + $item->quantity }}</span>
+                                    <span class="stock-display badge bg-info-subtle text-info mt-1">{{ $item->productVariant->getCurrentStock() + $item->quantity }}</span>
                                 </td>
                                 <td>
                                     <input type="number" name="items[{{ $index }}][quantity]" class="form-control form-control-sm quantity" min="1"
@@ -152,7 +152,7 @@
                                 </select>
                             </td>
                             <td class="text-center">
-                                <span class="stock-display badge bg-info mt-1">0</span>
+                                <span class="stock-display badge bg-info-subtle text-info mt-1">0</span>
                             </td>
                             <td>
                                 <input type="number" name="items[0][quantity]" class="form-control form-control-sm quantity" value="" min="1" data-row="0" required>
@@ -252,17 +252,34 @@
 
 
 
-<div class="text-center mb-4">
-    <button type="submit" class="btn btn-encodex btn-lg px-5">
-        <i class="fas fa-save me-1"></i> {{ isset($sale) ? __('kazitds::kazitds.Update Sale') : __('kazitds::kazitds.Complete Sale') }}
-    </button>
-    <a href="{{ route('sales.index') }}" class="btn btn-encodex-cancel btn-lg px-5 ms-2">
+<div class="text-end mb-4">
+    <a href="{{ route('sales.index') }}" class="btn btn-encodex-cancel btn-lg px-5 me-2">
         <i class="fas fa-times me-1"></i> @lang('kazitds::kazitds.Cancel')
     </a>
+    <button type="submit" class="btn btn-savex btn-lg px-5">
+        <i class="fas fa-save me-1"></i> {{ isset($sale) ? __('kazitds::kazitds.Update Sale') : __('kazitds::kazitds.Complete Sale') }}
+    </button>
 </div>
 
 @push('js')
 <script>
+    // select2 flips a dropdown upward when it doesn't fit in the visible window below the field.
+    // Product rows always open downward instead; the page scrolls if the list runs past the bottom.
+    // String form of require() is synchronous, so the override is in place before any select2 is created
+    (function (AttachBody) {
+        const positionDropdown = AttachBody.prototype._positionDropdown;
+        AttachBody.prototype._positionDropdown = function () {
+            positionDropdown.call(this);
+            if (!this.$element.hasClass('product-select') || !this.$dropdown.hasClass('select2-dropdown--above')) {
+                return;
+            }
+            this.$dropdown.removeClass('select2-dropdown--above').addClass('select2-dropdown--below');
+            this.$container.removeClass('select2-container--above').addClass('select2-container--below');
+            const parentTop = this.$dropdownParent.css('position') === 'static' ? 0 : this.$dropdownParent.offset().top;
+            this.$dropdownContainer.css('top', this.$container.offset().top + this.$container.outerHeight(false) - parentTop);
+        };
+    })($.fn.select2.amd.require('select2/dropdown/attachBody'));
+
     // Final cleanup before form submit: remove orphaned item fields
     $('form').on('submit', function() {
         $('#items_table tbody input, #items_table tbody select').each(function() {
@@ -341,7 +358,7 @@ $(document).ready(function() {
                     </select>
                 </td>
                 <td class="text-center">
-                    <span class="stock-display badge bg-info mt-1">0</span>
+                    <span class="stock-display badge bg-info-subtle text-info mt-1">0</span>
                 </td>
                 <td>
                     <input type="number" name="items[${rowIndex}][quantity]" class="form-control form-control-sm quantity" value="" min="1" data-row="${rowIndex}" required>
@@ -453,7 +470,7 @@ $(document).ready(function() {
         select.select2({
             placeholder: "@lang('kazitds::kazitds.Select Product')",
             width: '100%',
-            dropdownParent: $('#items_table')
+            dropdownParent: $('body') // not #items_table: its .table-responsive wrapper clips the dropdown
         }).on('select2:select', function() {
             const row = $(this).data('row');
             const selectedOption = $(this).find('option:selected');
@@ -541,7 +558,7 @@ $(document).ready(function() {
         $('.product-select').select2({
             placeholder: "@lang('kazitds::kazitds.Select Product')",
             width: '100%',
-            dropdownParent: $('#items_table')
+            dropdownParent: $('body') // not #items_table: its .table-responsive wrapper clips the dropdown
         });
         $('#customer_id').select2({
             placeholder: "@lang('kazitds::kazitds.Select Customer')",

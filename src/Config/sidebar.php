@@ -19,6 +19,7 @@ return [
                'route'      => 'products.index',
                'permit'     => 'product.view',
                'icon_color' => 'text-primary',
+               'active_for' => 'products.*',
             ],
             [
                'icon'       => 'fas fa-tags',
@@ -77,6 +78,7 @@ return [
                'route'      => 'sales.index',
                'permit'     => 'sale.view',
                'icon_color' => 'text-warning',
+               'for_active' => 'sales.*',
             ],
             [
                'icon'       => 'fas fa-money-bill-wave',

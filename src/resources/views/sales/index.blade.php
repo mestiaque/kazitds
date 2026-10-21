@@ -3,12 +3,9 @@
 @section('title', trans('kazitds::kazitds.Sales'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.create'),
-      'text' => __('kazitds::kazitds.Create Sale'),
-      'class' => 'btn-encodex-create'
-  ])
-  @endcomponent
+  <a href="{{ route('sales.create') }}" class="btn btn-sm btn-encodex-create">
+      <i class="fas fa-plus"></i> @lang('kazitds::kazitds.Create Sale')
+  </a>
 @endpush
 
 @section('content')
@@ -85,10 +82,10 @@
                         <tr>
                             <td>{{ toBanglaNumber($loop->iteration) }}</td>
                             <td>
-                                <span class="badge bg-info">{{ $sale->invoice_number }}
+                                <span class="badge bg-info-subtle text-info">{{ $sale->invoice_number }}
                                 </span>
                                 @if($sale->returns()->exists())
-                                    <br><span class="badge bg-warning text-danger">@lang('kazitds::kazitds.Returned')</span>
+                                    <br><span class="badge bg-warning-subtle text-warning-emphasis">@lang('kazitds::kazitds.Returned')</span>
                                 @endif
                             </td>
                             <td>{{ formatDateTime($sale->sale_date) }}</td>
@@ -99,7 +96,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <span class="badge bg-secondary text-white">{{ toBanglaNumber($sale->items->count()) }}</span>
+                                <span class="badge bg-secondary-subtle text-secondary">{{ toBanglaNumber($sale->items->count()) }}</span>
                             </td>
                             <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($sale->total_amount, 2) }}</td>
                             @if(get_setting('show_discount_option'))

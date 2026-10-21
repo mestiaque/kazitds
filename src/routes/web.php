@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use ME\Http\Middleware\LocaleMiddleware;
@@ -55,15 +56,26 @@ Route::middleware(['auth', LocaleMiddleware::class, 'activityLog', 'web'])->grou
     Route::redirect('sms-account', '/me/sms-log')->name('sms_account.show');
     Route::get('sms-log', [ReportController::class, 'smsLog'])->name('sms_log.index');
 
-    Route::get('stock-reports', [ReportController::class, 'stock'])->name('stock.reports');
-    Route::get('stock-reports/print', [ReportController::class, 'printStockReport'])->name('stock.reports.print');
-    Route::get('purchase-reports', [ReportController::class, 'purchases'])->name('purchases.reports');
-    Route::get('purchase-reports/print', [ReportController::class, 'printPurchasesReport'])->name('purchases.reports.print');
-    Route::get('sales-reports', [ReportController::class, 'sales'])->name('sales.reports');
-    Route::get('sales-reports/print', [ReportController::class, 'printSalesReport'])->name('sales.reports.print');
-    Route::get('product-variant-sales-reports', [ReportController::class, 'productVariantSales'])->name('product_variant_sales.reports');
-    Route::get('product-variant-sales-reports/print', [ReportController::class, 'printProductVariantSalesReport'])->name('product_variant_sales.reports.print');
-    Route::get('low-stock-reports', [ReportController::class, 'low_stock'])->name('low_stock.reports');
+    Route::prefix('reports')->group(function () {
+        Route::get('stock', [ReportController::class, 'stock'])->name('stock.reports');
+        Route::get('stock/print', [ReportController::class, 'printStockReport'])->name('stock.reports.print');
+        Route::get('purchase', [ReportController::class, 'purchases'])->name('purchases.reports');
+        Route::get('purchase/print', [ReportController::class, 'printPurchasesReport'])->name('purchases.reports.print');
+        Route::get('sales', [ReportController::class, 'sales'])->name('sales.reports');
+        Route::get('sales/print', [ReportController::class, 'printSalesReport'])->name('sales.reports.print');
+        Route::get('product-variant-sales', [ReportController::class, 'productVariantSales'])->name('product_variant_sales.reports');
+        Route::get('product-variant-sales/print', [ReportController::class, 'printProductVariantSalesReport'])->name('product_variant_sales.reports.print');
+        Route::get('low-stock', [ReportController::class, 'low_stock'])->name('low_stock.reports');
+    });
+
+    // Old report URLs (bookmarks) -> reports/..., keeping the filters in the query string
+    foreach (['stock', 'purchase', 'sales', 'product-variant-sales', 'low-stock'] as $report) {
+        foreach (['', '/print'] as $suffix) {
+            Route::get("$report-reports$suffix", fn (Request $request) => redirect()->to(
+                "/reports/$report$suffix" . ($request->getQueryString() ? '?' . $request->getQueryString() : ''), 301
+            ));
+        }
+    }
 
     Route::get('/sales/{sale}/print-invoice', [SaleController::class, 'printInvoice'])->name('sales.print-invoice');
     Route::get('/api/product-variants/{id}', [SaleController::class, 'getProductVariant'])->name('api.product-variants.show');
@@ -81,7 +93,7 @@ Route::middleware(['auth', LocaleMiddleware::class, 'activityLog', 'web'])->grou
 
 });
 
-Route::get('sales-invoice/{invoice_number}', [GuestController::class, 'saleInvoice'])->name('saleInvoice');
+Route::get('sales-invoice/{token}', [GuestController::class, 'saleInvoice'])->name('saleInvoice');
 
 
 });

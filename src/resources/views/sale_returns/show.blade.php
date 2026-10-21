@@ -36,7 +36,7 @@
                                 <tr>
                                     <td><strong>@lang('kazitds::kazitds.Status:')</strong></td>
                                     <td>
-                                        <span class="badge badge-{{ $saleReturn->status === 'approved' ? 'success' : ($saleReturn->status === 'rejected' ? 'danger' : 'warning') }}">
+                                        <span class="badge {{ $saleReturn->status === 'approved' ? 'bg-success-subtle text-success' : ($saleReturn->status === 'rejected' ? 'bg-danger-subtle text-danger' : 'bg-warning-subtle text-warning-emphasis') }}">
                                             {{ __('kazitds::kazitds.' . ucfirst($saleReturn->status)) }}
                                         </span>
                                     </td>

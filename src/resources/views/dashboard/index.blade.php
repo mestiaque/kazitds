@@ -178,7 +178,7 @@
         <div class="card shadow h-100">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">@lang('kazitds::kazitds.Low Stock Items')</h6>
-                <a href="{{ route('reports.stock') }}" class="btn btn-sm btn-encodex">
+                <a href="{{ route('stock.reports') }}" class="btn btn-sm btn-encodex">
                     @lang('kazitds::kazitds.View All')
                 </a>
             </div>
@@ -201,7 +201,7 @@
                                 <td>{{ $item->brand->name ?? '--' }}</td>
                                 <td>{{ $item->pack->name }}</td>
                                 <td>
-                                    <span class="badge badge-danger">{{ $item->current_stock }}</span>
+                                    <span class="badge bg-danger-subtle text-danger">{{ $item->current_stock }}</span>
                                 </td>
                                 <td>
                                     <a href="{{ route('purchases.create', ['product_variant_id' => $item->id]) }}" class="btn btn-sm btn-outline-success">

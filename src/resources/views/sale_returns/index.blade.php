@@ -40,7 +40,7 @@
                                     <td>{{ $return->return_date->format('d M Y') }}</td>
                                     <td>${{ toBanglaNumber($return->total_amount, 2) }}</td>
                                     <td>
-                                        <span class="badge badge-{{ $return->status === 'approved' ? 'success' : ($return->status === 'rejected' ? 'danger' : 'warning') }}">
+                                        <span class="badge {{ $return->status === 'approved' ? 'bg-success-subtle text-success' : ($return->status === 'rejected' ? 'bg-danger-subtle text-danger' : 'bg-warning-subtle text-warning-emphasis') }}">
                                             {{ ucfirst($return->status) }}
                                         </span>
                                     </td>

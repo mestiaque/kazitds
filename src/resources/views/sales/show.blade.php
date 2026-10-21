@@ -4,30 +4,16 @@
 
 @push('buttons')
   @if(!$sale->returns()->exists())
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.edit', $sale->id),
-      'text' => __('kazitds::kazitds.Edit'),
-      'icon' => 'edit',
-      'class' => 'btn-encodex-edit'
-  ])
-  @endcomponent
+  <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-sm btn-encodex-edit">
+      <i class="fas fa-edit"></i> @lang('kazitds::kazitds.Edit')
+  </a>
   @endif
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.print-invoice', $sale->id),
-      'text' => __('kazitds::kazitds.Print'),
-      'bg' => 'info',
-      'icon' => 'print',
-      'attributes' => 'target="_blank"',
-      'class' => 'btn-encodex-print2'
-  ])
-  @endcomponent
-  @component('me::components.btn.add-button', [
-      'route' => route('sales.index'),
-      'text' => __('kazitds::kazitds.Sales List'),
-      'icon' => 'list',
-      'class' => 'btn-encodex-list '
-  ])
-  @endcomponent
+  <a href="{{ route('sales.print-invoice', $sale->id) }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+      <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
+  </a>
+  <a href="{{ route('sales.index') }}" class="btn btn-sm btn-encodex-list">
+      <i class="fas fa-list"></i> @lang('kazitds::kazitds.Sales List')
+  </a>
 @endpush
 
 @section('content')
@@ -41,7 +27,7 @@
                 </h5>
             </div>
             <div class="col-auto text-end">
-                <span class="badge bg-light text-dark">
+                <span class="badge bg-light-subtle text-dark border">
                     @lang('kazitds::kazitds.Date'): {{ formatDateTime($sale->sale_date) }}
                 </span>
             </div>
@@ -100,7 +86,7 @@
                         <td><strong>{{ $item->productVariant->product->name }}</strong></td>
                         <td>{{ $item->productVariant->brand->name ?? '--' }}</td>
                         <td>{{ $item->productVariant->pack->name }}</td>
-                        <td class="text-center">{{ $item->quantity }}</td>
+                        <td class="text-center">{{ toBanglaNumber($item->quantity) }}</td>
                         <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($item->price_per_unit, 2) }}</td>
                         @if(get_setting('show_discount_option', true))
                         <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($item->item_discount, 2) }}</td>

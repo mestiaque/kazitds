@@ -3,14 +3,9 @@
 @section('title', trans('kazitds::kazitds.Purchase Report'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('purchases.reports.print') . '?' . http_build_query(request()->query()),
-      'text' => __('kazitds::kazitds.Print'),
-      'icon' => 'print',
-      'attribute' => 'target="_blank"',
-      'class' => 'btn-encodex-print2'
-  ])
-  @endcomponent
+  <a href="{{ route('purchases.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+      <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
+  </a>
 @endpush
 
 @section('content')
@@ -95,7 +90,7 @@
                                 <td><strong>{{ $row->variant->product->name ?? __('kazitds::kazitds.N/A') }}</strong></td>
                                 <td>{{ $row->variant->brand->name ?? '--' }}</td>
                                 <td>{{ $row->variant->pack->name ?? '--' }}</td>
-                                <td class="text-center"><span class="badge bg-secondary text-white">{{ toBanglaNumber($row->purchase_count) }}</span></td>
+                                <td class="text-center"><span class="badge bg-secondary-subtle text-secondary">{{ toBanglaNumber($row->purchase_count) }}</span></td>
                                 <td class="text-end">{{ toBanglaNumber($row->total_quantity) }}</td>
                                 <td class="text-end">{{ $tk }} {{ toBanglaNumber($row->avg_price, 2) }}</td>
                                 <td class="text-end fw-bold">{{ $tk }} {{ toBanglaNumber($row->total_amount, 2) }}</td>
@@ -131,7 +126,7 @@
                         @forelse($rows as $purchase)
                             <tr>
                                 <td>{{ toBanglaNumber($rows->firstItem() + $loop->index) }}</td>
-                                <td><span class="badge bg-success text-white">{{ $purchase->purchase_number }}</span></td>
+                                <td><span class="badge bg-success-subtle text-success">{{ $purchase->purchase_number }}</span></td>
                                 <td>{{ formatDate($purchase->purchase_date) }}</td>
                                 <td>
                                     @if($purchase->supplier)

@@ -4,6 +4,7 @@ namespace ME\Kazitds\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use ME\Models\Role;
 
 class RolePermission extends Model
 {

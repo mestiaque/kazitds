@@ -621,5 +621,7 @@ return [
     'User created successfully' => 'ব্যবহারকারী সফলভাবে তৈরি হয়েছে',
     'User updated successfully' => 'ব্যবহারকারী সফলভাবে আপডেট হয়েছে',
     'Error loading sale items. Please check console for details.' => 'বিক্রয়ের পণ্য লোড করা যায়নি। বিস্তারিত জানতে কনসোল দেখুন।',
+    'Invoice not found' => 'ইনভয়েস পাওয়া যায়নি',
+    'This invoice link is invalid or no longer available.' => 'এই ইনভয়েস লিংকটি সঠিক নয় অথবা আর পাওয়া যাচ্ছে না।',
 ];
 // কপিরাইট © 2025 ENcodeX। সকল অধিকার সংরক্ষিত। অনুমোদিত KAZI TRADERS-এর জন্য।

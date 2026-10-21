@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use ME\Kazitds\Models\Setting;
+use ME\Models\Setting;
 
 return new class extends Migration
 {
@@ -22,7 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Setting::forget('show_discount_option');
-        Setting::forget('show_previous_due_option');
+        Setting::whereIn('key', ['show_discount_option', 'show_previous_due_option'])->delete();
     }
 };

@@ -3,12 +3,9 @@
 @section('title', trans('kazitds::kazitds.Payments'))
 
 @push('buttons')
-  @component('me::components.btn.add-button', [
-      'route' => route('due.index'),
-      'text' => __('kazitds::kazitds.All Dues'),
-      'class' => 'btn-encodex-list'
-  ])
-  @endcomponent
+  <a href="{{ route('due.index') }}" class="btn btn-sm btn-encodex-list">
+      <i class="fas fa-list"></i> @lang('kazitds::kazitds.All Dues')
+  </a>
 @endpush
 
 @section('content')
@@ -62,7 +59,7 @@
             <div class="card-header p-1 bg-encodex-secondary text-white">
                 <h5 class="mb-0 d-flex justify-content-between align-items-center">
                     <span>@lang('kazitds::kazitds.Make Payment')</span>
-                    <span class="badge bg-danger text-white fs-6 py-2">
+                    <span class="badge bg-danger-subtle text-danger fs-6 py-2">
                         @lang('kazitds::kazitds.Due'): {{ toBanglaNumber($customer->due_amount ?? 0, 2) }}
                     </span>
                 </h5>
@@ -98,7 +95,7 @@
                     </div>
                     <div class="form-group row mt-3">
                         <div class="col-sm-9 offset-sm-3 text-end">
-                            <button type="submit" class="btn btn-sm btn-encodex">
+                            <button type="submit" class="btn btn-sm btn-savex">
                                 <i class="fa fa-money-bill-wave"></i> @lang('kazitds::kazitds.Pay')
                             </button>
                             {{-- <a href="{{ route('purchases.index') }}" class="btn btn-sm btn-encodex-cancel">@lang('kazitds::kazitds.Cancel')</a> --}}

@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="{{ asset('assets/img/favicon/Encodex.ico') }}" type="image/x-icon">
+@extends('me::printMaster2')
 
-    <title>@lang("kazitds::kazitds.Invoice") #{{ $sale->invoice_number }}</title>
+@section('title', __('kazitds::kazitds.Invoice') . ' #' . $sale->invoice_number)
+
+@push('css')
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
             margin: 0;
             padding: 0;
             font-size: 12px; /* Reduced font size */
@@ -237,10 +234,9 @@
         }
 
     </style>
-    <!-- QRCode.js CDN -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
-<body>
+@endpush
+
+@section('contents')
     <div class="invoice-container">
         <!-- Watermark inside invoice container -->
         <div class="watermark-bg">
@@ -249,13 +245,6 @@
             @else
                 <img src="{{ asset('assets/img/default-img/Encodex_c.png') }}" alt="@lang('kazitds::kazitds.Encodex')" class="encodex-watermark">
             @endif
-        </div>
-
-        <div class="no-print" style="text-align: right; margin-bottom: 5px;">
-            <a href="{{ route('sales.create') }}" class="btn-custom">@lang('kazitds::kazitds.Back')</a>
-            <button onclick="window.print()" style="padding: 3px 8px; cursor: pointer; background: #0f9bd6; color: white; border-radius: 4px;">
-                @lang('kazitds::kazitds.Print Invoice')
-            </button>
         </div>
 
         <!-- Header: Left (Logo), Center (Info), Right (QR Code) -->
@@ -387,21 +376,23 @@
         </div>
         <div class="custom-print-footer"></div>
     </div>
+@endsection
 
-
+@push('js')
+    <!-- QRCode.js CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             new QRCode(document.getElementById("qrcode"), {
-                text: "{{ route('saleInvoice', $sale->invoice_number) }}",
+                text: "{{ route('saleInvoice', $sale->public_token) }}",
                 width: 90,
                 height: 90,
                 colorDark : "#000000",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
             });
+            // Print once the QR code is drawn and the Bangla font has loaded
+            document.fonts.ready.then(function () { window.print(); });
         });
-        window.print();
     </script>
-</body>
-</html>
-
+@endpush

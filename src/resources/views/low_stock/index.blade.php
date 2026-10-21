@@ -3,12 +3,9 @@
 @section('title', __('kazitds::kazitds.Low Stock Products'))
 
 @push('buttons')
-    @component('me::components.btn.add-button', [
-        'route' => route('products.index'),
-        'text' => __('kazitds::kazitds.All Products'),
-        'class' => 'btn-encodex-list'
-    ])
-    @endcomponent
+    <a href="{{ route('products.index') }}" class="btn btn-sm btn-encodex-list">
+        <i class="fas fa-list"></i> @lang('kazitds::kazitds.All Products')
+    </a>
 @endpush
 
 @section('content')
@@ -36,7 +33,7 @@
                                 <td>{{ $variant->product->name ?? '-' }}</td>
                                 <td>{{ $variant->brand->name ?? '-' }} - {{ $variant->pack->name ?? '-' }}</td>
                                 <td>
-                                    <span class="badge bg-danger text-white">
+                                    <span class="badge bg-danger-subtle text-danger">
                                         {{ toBanglaNumber($variant->getCurrentStock()) }}
                                     </span>
                                 </td>
