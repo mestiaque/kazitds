@@ -61,7 +61,7 @@
                                         <td class="text-end">@lang('kazitds::kazitds.TK.') {{ toBanglaNumber($customer->due_amount, 2) }}</td>
                                         <td class="text-nowrap">{{ formatDateTime($customer->created_at) }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('customers.show', $customer->id) }}" class="btn btn-sm btn-encodex-show" target="_blank">
+                                            <a href="{{ route('customers.show', $customer->id) }}" class="btn btn-sm btn-encodex-show me-1" target="_blank">
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                         </td>

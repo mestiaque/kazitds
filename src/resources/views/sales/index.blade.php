@@ -111,12 +111,12 @@
                             @endif
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center" style="">
-                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-encodex-show btn-sm " title="@lang("kazitds::kazitds.View")">
+                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-encodex-show me-1 btn-sm " title="@lang("kazitds::kazitds.View")">
                                         <i class="fas fa-eye "></i>
                                     </a>
 
                                     @if(!$sale->returns()->exists())
-                                        <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-encodex-edit btn-sm " title="@lang("kazitds::kazitds.Edit")">
+                                        <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-encodex-edit me-1 btn-sm " title="@lang("kazitds::kazitds.Edit")">
                                             <i class="fas fa-edit "></i>
                                         </a>
                                     @endif

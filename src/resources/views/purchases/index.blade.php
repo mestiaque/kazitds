@@ -75,12 +75,12 @@
                 <td class="text-end">@lang("kazitds::kazitds.TK.") {{ toBanglaNumber($purchase->total_price, 2) }}</td>
                 <td>{{ $purchase->supplier->name ?? __('kazitds::kazitds.N/A') }}</td>
                 <td class="d-flex justify-content-center">
-                  <button type="button" title="@lang("kazitds::kazitds.View")" class="btn btn-sm btn-encodex-show"
+                  <button type="button" title="@lang("kazitds::kazitds.View")" class="btn btn-sm btn-encodex-show me-1"
                       data-bs-toggle="modal" data-bs-target="#showModal{{ $purchase->id }}">
                       <i class="fas fa-eye"></i>
                   </button>
 
-                  <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit"
+                  <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit me-1"
                       data-bs-toggle="modal" data-bs-target="#editModal{{ $purchase->id }}">
                       <i class="fas fa-edit"></i>
                   </button>
@@ -141,7 +141,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-encodex-cancel" data-bs-dismiss="modal">@lang('kazitds::kazitds.Close')</button>
-            <button type="button" class="btn btn-sm btn-encodex-edit" data-bs-toggle="modal" data-bs-target="#editModal{{ $purchase->id }}">
+            <button type="button" class="btn btn-sm btn-encodex-edit me-1" data-bs-toggle="modal" data-bs-target="#editModal{{ $purchase->id }}">
               <i class="fas fa-edit"></i> @lang('kazitds::kazitds.Edit')
             </button>
           </div>

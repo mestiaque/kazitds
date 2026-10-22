@@ -162,7 +162,7 @@
                                 @endif
                                 <td class="text-end fw-bold">{{ $tk }} {{ toBanglaNumber($sale->net_amount, 2) }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-sm btn-encodex-show" title="@lang('kazitds::kazitds.View Details')"><i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-sm btn-encodex-show me-1" title="@lang('kazitds::kazitds.View Details')"><i class="fas fa-eye"></i></a>
                                     <a href="{{ route('sales.print-invoice', $sale->id) }}" target="_blank" class="btn btn-sm btn-encodex-print" title="@lang('kazitds::kazitds.Print Invoice')"><i class="fas fa-print"></i></a>
                                 </td>
                             </tr>

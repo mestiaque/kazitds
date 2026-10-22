@@ -19,7 +19,7 @@ return [
                'route'      => 'products.index',
                'permit'     => 'product.view',
                'icon_color' => 'text-primary',
-               'active_for' => 'products.*',
+               'for_active' => 'products.*',
             ],
             [
                'icon'       => 'fas fa-tags',
@@ -27,7 +27,7 @@ return [
                'route'      => 'brands.index',
                'icon_color' => 'text-primary',
                'permit'     => 'brand.view',
-               'active_for' => 'brands.*',
+               'for_active' => 'brands.*',
             ],
             [
                'icon'       => 'fas fa-box-open',
@@ -35,7 +35,7 @@ return [
                'route'      => 'packs.index',
                'permit'     => 'pack.view',
                'icon_color' => 'text-primary',
-               'active_for' => 'packs.*',
+               'for_active' => 'packs.*',
             ],
             [
                'icon'       => 'fas fa-cubes',
@@ -43,7 +43,7 @@ return [
                'route'      => 'product-variants.index',
                'icon_color' => 'text-primary',
                'permit'     => 'product_variant.view',
-               'active_for' => 'product-variants.*',
+               'for_active' => 'product-variants.*',
             ],
             [
                'icon'       => 'fas fa-user-tie',
@@ -51,7 +51,7 @@ return [
                'route'      => 'suppliers.index',
                'permit'     => 'supplier.view',
                'icon_color' => 'text-primary',
-               'active_for' => 'suppliers.*',
+               'for_active' => 'suppliers.*',
             ],
             [
                'icon'       => 'fas fa-users',
@@ -59,7 +59,7 @@ return [
                'route'      => 'customers.index',
                'permit'     => 'customer.view',
                'icon_color' => 'text-primary',
-                'active_for' => 'customers.*',
+               'for_active' => 'customers.*',
             ],
         ]
     ],

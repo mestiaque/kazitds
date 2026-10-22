@@ -19,7 +19,7 @@ class CustomerController extends Controller
         $this->middleware('authorization:customer.create')->only(['create', 'store']);
         $this->middleware('authorization:customer.edit')->only(['edit', 'update']);
         $this->middleware('authorization:customer.delete')->only('destroy');
-        $this->middleware('authorization:customer.edit')->only('duplicates');
+        $this->middleware('authorization:customer.duplicates')->only('duplicates');
         $this->middleware('authorization:customer.delete')->only('merge');
     }
 

@@ -4,7 +4,7 @@
 
 @push('buttons')
   @if(!$sale->returns()->exists())
-  <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-sm btn-encodex-edit">
+  <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-sm btn-encodex-edit me-1">
       <i class="fas fa-edit"></i> @lang('kazitds::kazitds.Edit')
   </a>
   @endif

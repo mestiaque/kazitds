@@ -51,7 +51,7 @@
                 @endif
               </td> --}}
               <td class="d-flex justify-content-center">
-                <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit "
+                <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit me-1 "
                     data-bs-toggle="modal" data-bs-target="#editModal{{ $product->id }}">
                     <i class="fas fa-edit "></i>
                 </button>
