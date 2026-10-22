@@ -27,6 +27,7 @@ return [
                'route'      => 'brands.index',
                'icon_color' => 'text-primary',
                'permit'     => 'brand.view',
+               'active_for' => 'brands.*',
             ],
             [
                'icon'       => 'fas fa-box-open',
@@ -34,6 +35,7 @@ return [
                'route'      => 'packs.index',
                'permit'     => 'pack.view',
                'icon_color' => 'text-primary',
+               'active_for' => 'packs.*',
             ],
             [
                'icon'       => 'fas fa-cubes',
@@ -41,6 +43,7 @@ return [
                'route'      => 'product-variants.index',
                'icon_color' => 'text-primary',
                'permit'     => 'product_variant.view',
+               'active_for' => 'product-variants.*',
             ],
             [
                'icon'       => 'fas fa-user-tie',
@@ -48,6 +51,7 @@ return [
                'route'      => 'suppliers.index',
                'permit'     => 'supplier.view',
                'icon_color' => 'text-primary',
+               'active_for' => 'suppliers.*',
             ],
             [
                'icon'       => 'fas fa-users',
@@ -55,6 +59,7 @@ return [
                'route'      => 'customers.index',
                'permit'     => 'customer.view',
                'icon_color' => 'text-primary',
+                'active_for' => 'customers.*',
             ],
         ]
     ],
@@ -71,6 +76,7 @@ return [
                'route'      => 'purchases.index',
                'permit'     => 'purchase.view',
                'icon_color' => 'text-warning',
+               'for_active' => 'purchases.*',
             ],
             [
                'icon'       => 'fas fa-cash-register',
@@ -86,6 +92,7 @@ return [
                'route'      => 'due.index',
                'permit'     => 'due.view',
                'icon_color' => 'text-warning',
+                'for_active' => 'due.*',
             ],
         ]
     ],
@@ -101,6 +108,7 @@ return [
                'route'      => 'stock.reports',
                'permit'     => 'stock_report.view',
                'icon_color' => 'text-info',
+               'for_active' => 'stock.reports',
             ],
             [
                'icon'       => 'fas fa-shopping-cart',
@@ -108,6 +116,7 @@ return [
                'route'      => 'purchases.reports',
                'permit'     => 'purchase_report.view',
                'icon_color' => 'text-info',
+               'for_active' => 'purchases.reports',
             ],
             [
                'icon'       => 'fas fa-cash-register',
@@ -115,6 +124,7 @@ return [
                'route'      => 'sales.reports',
                'permit'     => 'sale_report.view',
                'icon_color' => 'text-info',
+               'for_active' => 'sales.reports',
             ],
             [
                'icon'       => 'fas fa-file-invoice',
@@ -122,6 +132,7 @@ return [
                'route'      => 'product_variant_sales.reports',
                'permit'     => 'sale_report.view',
                'icon_color' => 'text-info',
+               'for_active' => 'product_variant_sales.reports',
             ],
             [
                'icon'       => 'fas fa-exclamation-triangle',
@@ -129,6 +140,7 @@ return [
                'route'      => 'low_stock.reports',
                'permit'     => 'low_stock.view',
                'icon_color' => 'text-info',
+                'for_active' => 'low_stock.reports',
             ],
             [
                'icon'       => 'fas fa-comments',
@@ -136,6 +148,7 @@ return [
                'route'      => 'sms_log.index',
                'permit'     => 'sms_report.view',
                'icon_color' => 'text-info',
+                'for_active' => 'sms_log.index',
             ],
         ]
     ],
