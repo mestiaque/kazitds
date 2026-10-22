@@ -3,7 +3,7 @@
 @section('title', trans('kazitds::kazitds.Purchase Report'))
 
 @push('buttons')
-  <a href="{{ route('purchases.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+  <a href="{{ route('purchases.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print" target="_blank">
       <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
   </a>
 @endpush

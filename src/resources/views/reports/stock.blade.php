@@ -3,7 +3,7 @@
 @section('title', trans('kazitds::kazitds.Stock Report'))
 
 @push('buttons')
-  <a href="{{ route('stock.reports.print') }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+  <a href="{{ route('stock.reports.print') }}" class="btn btn-sm btn-encodex-print" target="_blank">
       <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
   </a>
 @endpush

@@ -8,7 +8,7 @@
       <i class="fas fa-edit"></i> @lang('kazitds::kazitds.Edit')
   </a>
   @endif
-  <a href="{{ route('sales.print-invoice', $sale->id) }}" class="btn btn-sm btn-encodex-print2" target="_blank">
+  <a href="{{ route('sales.print-invoice', $sale->id) }}" class="btn btn-sm btn-encodex-print" target="_blank">
       <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
   </a>
   <a href="{{ route('sales.index') }}" class="btn btn-sm btn-encodex-list">
