@@ -3,6 +3,12 @@
 @section('title', trans('kazitds::kazitds.Customers'))
 
 @push('buttons')
+  <a href="{{ route('customers.duplicates') }}" class="btn btn-sm {{ $duplicateGroupCount ? 'btn-warning' : 'btn-encodex-list' }}">
+      <i class="fas fa-user-friends"></i> @lang('kazitds::kazitds.Duplicate Customers')
+      @if ($duplicateGroupCount)
+          <span class="badge bg-danger">{{ toBanglaNumber($duplicateGroupCount) }}</span>
+      @endif
+  </a>
   <button type="button" class="btn btn-sm btn-encodex-create" data-bs-toggle="modal" data-bs-target="#createModal">
       <i class="fas fa-plus"></i> @lang('kazitds::kazitds.Add Customer')
   </button>
@@ -55,6 +61,10 @@
                 <td>{{ $customer->address ?? __('kazitds::kazitds.N/A') }}</td>
                 <td class="text-end">@lang('kazitds::kazitds.TK.') {{ toBanglaNumber($customer->due_amount, 2) }}</td>
                 <td class="d-flex justify-content-center">
+                  <a href="{{ route('customers.show', $customer->id) }}" title="@lang('kazitds::kazitds.View')"
+                      class="btn btn-sm btn-encodex-show">
+                      <i class="fas fa-eye"></i>
+                  </a>
                   <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit "
                       data-bs-toggle="modal" data-bs-target="#editModal{{ $customer->id }}">
                       <i class="fas fa-edit "></i>

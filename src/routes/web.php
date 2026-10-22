@@ -36,6 +36,8 @@ Route::middleware(['auth', LocaleMiddleware::class, 'activityLog', 'web'])->grou
         // Due routes
         Route::get('/language/{locale?}', [DataController::class, 'changeLocale'])->name('language.change');
         Route::get('/api/sales-chart-data', [DashboardController::class, 'salesChartData']);
+        Route::get('customers/duplicates', [CustomerController::class, 'duplicates'])->name('customers.duplicates');
+        Route::post('customers/merge', [CustomerController::class, 'merge'])->name('customers.merge');
         Route::resources([
             'products' => ProductController::class,
             'brands' => BrandController::class,

@@ -15,6 +15,7 @@ use ME\Kazitds\Http\Services\CustomerSaleLedgerService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class SaleController extends Controller
 {
@@ -111,8 +112,8 @@ class SaleController extends Controller
 
             // Handle customer
             $customerId = $request->customer_id;
-            $customerName = $request->customer_name;
-            $mobileNumber = $request->mobile_number;
+            $customerName = $request->filled('customer_name') ? Str::squish($request->customer_name) : null;
+            $mobileNumber = $request->filled('mobile_number') ? trim($request->mobile_number) : null;
 
             $customer = null;
             $saleDate = Carbon::parse($request->sale_date)->setTimeFrom(now());
@@ -126,7 +127,11 @@ class SaleController extends Controller
 
                 // phone না পেলে name দিয়ে খোঁজা
                 if (!$customer && $customerName) {
-                    $customer = Customer::where('name', $customerName)->first();
+                    // অতিরিক্ত space থাকলেও একই কাস্টমার ধরা হবে, নতুন duplicate তৈরি হবে না
+                    $customer = Customer::where('name', $customerName)->first()
+                        ?? Customer::where('name', 'like', '%' . Str::before($customerName, ' ') . '%')
+                            ->get()
+                            ->first(fn (Customer $candidate) => Str::squish($candidate->name) === $customerName);
                 }
 
                 // কিছুই না পেলে create
