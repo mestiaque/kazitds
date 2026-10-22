@@ -240,8 +240,8 @@
     <div class="invoice-container">
         <!-- Watermark inside invoice container -->
         <div class="watermark-bg">
-            @if(get_setting('shop_logo'))
-                <img src="{{ route('shop_logo.show', get_setting('shop_logo')) }}" alt="@lang('kazitds::kazitds.Shop Logo')">
+            @if(get_setting('app_logo'))
+                <img src="{{ route('app_logo.show', get_setting('app_logo')) }}" alt="@lang('kazitds::kazitds.App Logo')">
             @else
                 <img src="{{ asset('assets/img/default-img/Encodex_c.png') }}" alt="@lang('kazitds::kazitds.Encodex')" class="encodex-watermark">
             @endif
@@ -250,8 +250,8 @@
         <!-- Header: Left (Logo), Center (Info), Right (QR Code) -->
         <div class="invoice-header-flex">
             <div>
-                @if(get_setting('shop_logo'))
-                    <img src="{{ route('shop_logo.show', get_setting('shop_logo')) }}" class="header-logo" alt="@lang('kazitds::kazitds.Shop Logo')">
+                @if(get_setting('app_logo'))
+                    <img src="{{ route('app_logo.show', get_setting('app_logo')) }}" class="header-logo" alt="@lang('kazitds::kazitds.App Logo')">
                 @else
                     <img src="{{ asset('assets/img/default-img/Encodex_c.png') }}" class="header-logo" alt="@lang('kazitds::kazitds.Encodex')">
                 @endif
