@@ -555,4 +555,5 @@ return [
     'Error loading sale items. Please check console for details.' => 'Error loading sale items. Please check console for details.',
     'Invoice not found' => 'Invoice not found',
     'This invoice link is invalid or no longer available.' => 'This invoice link is invalid or no longer available.',
+    'Contact' => 'Contact'
 ];

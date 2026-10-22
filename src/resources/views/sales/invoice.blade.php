@@ -16,7 +16,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 5px; /* Reduced margin */
+            margin-bottom: 0px;
             border-bottom: 1px solid #333; /* Thinner border */
             padding-bottom: 2px; /* Reduced padding */
             position: relative;
@@ -48,6 +48,7 @@
             box-sizing: border-box;
             position: relative;
             z-index: 2;
+            height: 145mm ;
         }
         .invoice-header {
             text-align: center;
@@ -66,7 +67,7 @@
         .invoice-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px; /* Reduced margin */
+            margin-bottom: 2px; /* Reduced margin */
         }
         .invoice-info div {
             width: 48%;
@@ -79,7 +80,7 @@
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 4px; /* Reduced padding */
+            padding: 2px; /* Reduced padding */
             text-align: left;
         }
         th {
@@ -96,12 +97,12 @@
             text-align: right;
         }
         .footer {
-            margin-top: 15px; /* Reduced margin */
+            margin-top: 1px; /* Reduced margin */
             text-align: center;
             color: #666;
             font-size: 10px; /* Smaller font */
             border-top: 1px solid #ddd;
-            padding-top: 5px; /* Reduced padding */
+            padding-top: 1px; /* Reduced padding */
         }
         .bengali {
             font-family: 'SolaimanLipi', Arial, sans-serif;
@@ -157,7 +158,7 @@
         .summary-flex-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
+            margin-top: 1px;
             align-items: flex-start;
         }
 
@@ -177,6 +178,7 @@
         .summary-table th {
             font-weight: bold;
             width: 55%;
+            background: #f2f2f2 !important;
         }
 
         .notes-container {
@@ -257,9 +259,9 @@
                 @endif
             </div>
             <div class="header-info">
-                <h1 style="margin:0; margin-bottom:1px; font-size:2.33rem; margin-top: 0.5rem">{{ get_setting('shop_name', config('app.name', 'ENcodeX')) }}</h1>
-                <p style="margin:1px">{{ get_setting('shop_address', __('kazitds::kazitds.Your Company Address Here')) }}</p>
-                <p style="margin:1px">
+                <h1 style="margin:0; margin-bottom:1px; font-size:2.33rem; margin-top: 0.5rem; line-height: 1.8rem;">{{ get_setting('shop_name', config('app.name', 'ENcodeX')) }}</h1>
+                <p style="margin:1px; margin-bottom:0">{{ get_setting('shop_address', __('kazitds::kazitds.Your Company Address Here')) }}</p>
+                <p style="margin:1px ; margin-top:-3px">
                     @lang('kazitds::kazitds.Phone'): {{ get_setting('shop_phone', '+880 123456789') }} |
                     @lang('kazitds::kazitds.Email'): {{ get_setting('shop_email', 'info@example.com') }}
                 </p>
@@ -271,14 +273,14 @@
         </div>
 
         <div class="invoice-info">
-            <div>
+            <div style="line-height: 1.2;">
                 <strong>@lang('kazitds::kazitds.Invoice To'):</strong>
                 {{ $sale->customer_name ?? __('kazitds::kazitds.N/A') }}<br>
                 @if($sale->mobile_number)
-                    @lang('kazitds::kazitds.Phone'): {{ toBanglaPhone($sale->mobile_number) }}<br>
+                    @lang('kazitds::kazitds.Contact'): {{ toBanglaPhone($sale->mobile_number) }}
                 @endif
                 @if($sale->customer && $sale->customer->address)
-                    @lang('kazitds::kazitds.Address'): {{ $sale->customer->address }}<br>
+                    ( @lang('kazitds::kazitds.Address'): {{ $sale->customer->address }} )
                 @endif
             </div>
             <div style="text-align: right;">
@@ -287,7 +289,7 @@
             </div>
         </div>
 
-        <table>
+        <table style="margin-bottom:2px">
             <thead>
                 <tr>
                     <th class="text-center">#</th>
@@ -303,7 +305,7 @@
             <tbody>
                 @foreach($sale->items as $item)
                 <tr>
-                    <td>{{ toBanglaNumber($loop->iteration) }}</td>
+                    <td style="text-align: center;">{{ toBanglaNumber($loop->iteration) }}</td>
                     <td>
                         @if($item->productVariant->brand)
                             {{ $item->productVariant->brand->name }}
