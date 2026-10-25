@@ -36,7 +36,7 @@ class Sale extends Model
     {
         // Every sale gets a random token for its public invoice link
         static::creating(function (Sale $sale) {
-            $sale->public_token ??= Str::random(32);
+            $sale->public_token ??= Str::random(12);   // 12 is plenty to be unguessable and keeps the invoice QR small
         });
     }
 

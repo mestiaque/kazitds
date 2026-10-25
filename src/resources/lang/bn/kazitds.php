@@ -237,7 +237,7 @@ return [
     "Received By" => "গ্রহণ করেছেন",
     "Authorized" => "অনুমোদিত",
     "This is a computer-generated invoice." => "এটি একটি কম্পিউটার-উৎপন্ন চালান।",
-    "Developed by: ENcodeX" => "প্রস্তুতকারী প্রতিষ্ঠান: ENcodeX",
+    "Developed by: ENcodeX" => "প্রস্তুতকারী প্রতিষ্ঠান: :developer",
     "Remove Item" => "আইটেম মুছে ফেলুন",
     "Select Product" => "পণ্য নির্বাচন করুন",
     "At least one item is required." => "কমপক্ষে একটি আইটেম প্রয়োজন।",

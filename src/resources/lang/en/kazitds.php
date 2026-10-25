@@ -130,7 +130,7 @@ return [
     'Delete' => 'Delete',
     'Delete Account' => 'Delete Account',
     'Description' => 'Description',
-    'Developed by: ENcodeX' => 'Developed by: ENcodeX',
+    'Developed by: ENcodeX' => 'Developed by: :developer',
     'Disc' => 'Disc',
     'Discount' => 'Discount',
     'Due' => 'Due',

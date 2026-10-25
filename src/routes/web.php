@@ -95,7 +95,14 @@ Route::middleware(['auth', LocaleMiddleware::class, 'activityLog', 'web'])->grou
 
 });
 
-Route::get('sales-invoice/{token}', [GuestController::class, 'saleInvoice'])->name('saleInvoice');
 
 
+});
+
+// Public invoice links (the QR on a printed invoice): no login needed, the random token protects each invoice.
+// Kept outside the auth group above, otherwise a customer scanning the QR lands on the login page.
+Route::middleware('web')->group(function () {
+    Route::get('sales-invoice/{token}', [GuestController::class, 'saleInvoice'])->name('saleInvoice');
+    // Short link used in the invoice QR (fewer characters = a smaller, easier-to-scan QR)
+    Route::get('i/{token}', [GuestController::class, 'saleInvoice'])->name('saleInvoice.short');
 });

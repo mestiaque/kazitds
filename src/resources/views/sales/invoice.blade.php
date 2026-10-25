@@ -372,7 +372,7 @@
         <div class="footer">
             <p style="margin: 0;">
                 <small>
-                    @lang('kazitds::kazitds.This is a computer-generated invoice.') | @lang('kazitds::kazitds.Developed by: ENcodeX')
+                    @lang('kazitds::kazitds.This is a computer-generated invoice.') | @lang('kazitds::kazitds.Developed by: ENcodeX', ['developer' => config('me_settings.meta_author')])
                 </small>
             </p>
         </div>
@@ -386,12 +386,12 @@
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             new QRCode(document.getElementById("qrcode"), {
-                text: "{{ route('saleInvoice', $sale->public_token) }}",
+                text: "{{ route('saleInvoice.short', $sale->public_token) }}",
                 width: 90,
                 height: 90,
                 colorDark : "#000000",
                 colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
+                correctLevel : QRCode.CorrectLevel.M   // no logo on the QR, so M (15%) is enough and makes it much less dense
             });
             // Print once the QR code is drawn and the Bangla font has loaded
             document.fonts.ready.then(function () { window.print(); });
