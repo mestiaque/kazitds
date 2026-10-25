@@ -68,9 +68,10 @@ class SaleController extends Controller
         }
         $invoiceNumber = 'INV-' . str_pad($nextInvoiceNumberInt, 8, '0', STR_PAD_LEFT);
 
-        // Add stock quantity to each product variant
+        // Add stock quantity to each product variant (all variants in one grouped query)
+        $stockMap = ProductVariant::stockMap($productVariants->pluck('id')->all());
         foreach ($productVariants as $variant) {
-            $variant->stock = $variant->getCurrentStock();
+            $variant->stock = $stockMap[$variant->id] ?? 0;
         }
 
         // Get form display settings as boolean values
@@ -262,11 +263,14 @@ class SaleController extends Controller
         $productVariants = ProductVariant::with(['product', 'brand', 'pack'])->where('is_active', true)->get();
         $dues = Due::where('sale_id', $sale->id)->first();
 
-        // Add stock quantity to each product variant (plus quantities in this sale)
+        // Add stock quantity to each product variant (plus quantities in this sale); all variants in one grouped query.
+        // current_stock is the plain stock, used by the form for rows that hold a different product.
+        $stockMap = ProductVariant::stockMap($productVariants->pluck('id')->all());
         foreach ($productVariants as $variant) {
             $saleItem = $sale->items->where('product_variant_id', $variant->id)->first();
             $currentQuantity = $saleItem ? $saleItem->quantity : 0;
-            $variant->stock = $variant->getCurrentStock() + $currentQuantity;
+            $variant->current_stock = $stockMap[$variant->id] ?? 0;
+            $variant->stock = $variant->current_stock + $currentQuantity;
         }
 
         // Get form display settings as boolean values

@@ -108,7 +108,7 @@
                                             @php
                                                 $stockQty = $variant->id == $item->product_variant_id
                                                     ? $variant->stock
-                                                    : $variant->getCurrentStock();
+                                                    : ($variant->current_stock ?? $variant->getCurrentStock());
                                             @endphp
                                             <option value="{{ $variant->id }}"
                                                 data-price="{{ $variant->selling_price }}"
@@ -120,7 +120,8 @@
                                     </select>
                                 </td>
                                 <td class="text-center">
-                                    <span class="stock-display badge bg-info-subtle text-info mt-1">{{ $item->productVariant->getCurrentStock() + $item->quantity }}</span>
+                                    @php $rowVariant = $productVariants->firstWhere('id', $item->product_variant_id); @endphp
+                                    <span class="stock-display badge bg-info-subtle text-info mt-1">{{ ($rowVariant->current_stock ?? $item->productVariant->getCurrentStock()) + $item->quantity }}</span>
                                 </td>
                                 <td>
                                     <input type="number" name="items[{{ $index }}][quantity]" class="form-control form-control-sm quantity" min="1"

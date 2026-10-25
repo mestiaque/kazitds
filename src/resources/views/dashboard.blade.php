@@ -400,6 +400,14 @@
 </div>
 @endsection
 
+{{-- ApexCharts isn't loaded by me::master any more; the charts below bring it themselves (once per page) --}}
+@pushOnce('css', 'lib-apexcharts-css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+@endPushOnce
+@pushOnce('js', 'lib-apexcharts')
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
+@endPushOnce
+
 @push('js')
 <script>
 (function () {
