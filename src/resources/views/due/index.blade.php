@@ -105,7 +105,7 @@
 
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center" style="">
-                                    <a href="{{ route('due.payment.store', $customer->id) }}" class="btn btn-encodex-payment btn-sm " title="@lang("kazitds::kazitds.Payment")">
+                                    <a href="{{ route('due.payment.store', $customer->id) }}" class="btn btn-encodex-payment btn-sm me-1" title="@lang("kazitds::kazitds.Payment")">
                                         <i class="fas fa-money-bill-wave "></i>
                                     </a>
                                     @if(isset(get_setting('sms_permit')['reminder']) && get_setting('sms_permit')['reminder'] == 1)

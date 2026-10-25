@@ -121,7 +121,7 @@
                                         </a>
                                     @endif
 
-                                    <a href="{{ route('sales.print-invoice', $sale->id) }}" target="_blank" class="btn btn-encodex-print btn-sm " title="@lang("kazitds::kazitds.Print")">
+                                    <a href="{{ route('sales.print-invoice', $sale->id) }}" target="_blank" class="btn btn-encodex-print btn-sm me-1" title="@lang("kazitds::kazitds.Print")">
                                         <i class="fas fa-print "></i>
                                     </a>
 
