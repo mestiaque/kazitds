@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-  <div class="card border-left-primary shadow h-100 w-100">
+  <div class="card glass-card border-left-primary shadow h-100 w-100">
     <div class="card-body">
       <form method="GET" action="{{ route('purchases.index') }}" class="mb-3">
         <div class="row">

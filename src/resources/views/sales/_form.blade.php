@@ -1,4 +1,4 @@
-<div class="card mb-3">
+<div class="card glass-card mb-3">
     <div class="card-header bg-primary text-white py-2 d-none">
         <h6 class="m-0 font-weight-bold">@lang('kazitds::kazitds.Customer Information')</h6>
     </div>
@@ -65,7 +65,7 @@
     </div>
 </div>
 
-<div class="card mb-3 border border-primary">
+<div class="card glass-card mb-3 border border-primary">
     <div class="card-header bg-primary text-white py-1 d-none">
         <div class="row align-items-center">
             <div class="col">
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <div class="card-body p-0 ">
+    <div class="card-body p-0">
         <div class="table-responsive">
             <table class="table table-bordered table-hover mb-0 table-sm table-encodex" id="items_table">
                 <thead class="bg-light">
@@ -176,7 +176,7 @@
     </div>
 </div>
 
-<div class="card mb-3">
+<div class="card glass-card mb-3">
     <div class="card-header bg-primary text-white py-2 d-none">
         <h6 class="m-0 font-weight-bold">@lang('kazitds::kazitds.Sale Summary')</h6>
     </div>

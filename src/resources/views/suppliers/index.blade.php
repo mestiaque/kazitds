@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-  <div class="card border-left-primary shadow h-100 w-100 py-2">
+  <div class="card glass-card border-left-primary shadow h-100 w-100 py-2">
     <div class="card-body">
         <form method="GET" action="{{ route('suppliers.index') }}" class="mb-3">
             <div class="row">
@@ -54,17 +54,17 @@
                 <td>{{ $supplier->email ?? __('kazitds::kazitds.N/A') }}</td>
                 <td>{{ $supplier->address ?? __('kazitds::kazitds.N/A') }}</td>
                 <td class="d-flex justify-content-center">
-                  <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit me-1 "
+                  <button type="button" title="@lang("kazitds::kazitds.Edit")" class="btn btn-sm btn-encodex-edit me-1"
                       data-bs-toggle="modal" data-bs-target="#editModal{{ $supplier->id }}">
-                      <i class="fas fa-edit "></i>
+                      <i class="fas fa-edit"></i>
                   </button>
 
                   <form action="{{ route('suppliers.destroy', $supplier->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button title="@lang("kazitds::kazitds.Delete")" onclick="return confirm('{{ __('kazitds::kazitds.Are you sure you want to delete this?') }}')"
-                        type="submit" class="btn btn-sm btn-encodex-delete ">
-                        <i class="fas fa-trash "></i>
+                        type="submit" class="btn btn-sm btn-encodex-delete">
+                        <i class="fas fa-trash"></i>
                     </button>
                   </form>
                 </td>

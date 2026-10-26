@@ -1,3 +1,7 @@
+@php
+    app()->setLocale('bn');
+@endphp
+
 @extends('me::printMaster2')
 
 @section('title', __('kazitds::kazitds.Invoice') . ' #' . $sale->invoice_number)

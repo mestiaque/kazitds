@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-    <div class="card border-left-primary shadow mb-4">
+    <div class="card glass-card border-left-primary shadow mb-4">
         <div class="card-body">
             <div class="alert alert-info py-2 small">
                 <i class="fas fa-info-circle me-1"></i>

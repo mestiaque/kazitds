@@ -3,16 +3,16 @@
 @section('title', trans('kazitds::kazitds.Product Variant Wise Sales Report'))
 
 @push('buttons')
-  <a href="{{ route('product_variant_sales.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print" target="_blank">
+  <a href="{{ route('report.product_variant_sales.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print" target="_blank">
       <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
   </a>
 @endpush
 
 @section('content')
 
-<div class="card shadow mb-4 w-100">
+<div class="card glass-card shadow mb-4 w-100">
     <div class="card-body">
-        <form method="GET" action="{{ route('product_variant_sales.reports') }}">
+        <form method="GET" action="{{ route('report.product_variant_sales') }}">
             <div class="row">
                 <div class="col-md-2 mb-3">
                     <div class="form-group">
@@ -48,7 +48,7 @@
                         <button type="submit" class="btn btn-sm btn-encodex-search me-1">
                             <i class="fas fa-search me-1"></i> @lang('kazitds::kazitds.Search')
                         </button>
-                            <a href="{{ route('product_variant_sales.reports') }}" class="btn btn-encodex-clear btn-sm">
+                            <a href="{{ route('report.product_variant_sales') }}" class="btn btn-encodex-clear btn-sm">
                                 <i class="fas fa-eraser me-1"></i> @lang('kazitds::kazitds.Reset')
                             </a>
                     </div>

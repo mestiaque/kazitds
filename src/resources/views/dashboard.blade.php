@@ -148,7 +148,7 @@
             <div class="kz-card h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Top Products This Month')</h6>
-                    <a href="{{ route('product_variant_sales.reports') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
+                    <a href="{{ route('report.product_variant_sales') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
                 </div>
                 <div class="kz-card-body">
                     @php $maxProductAmount = max($topProducts->max('total_amount') ?? 0, 1); @endphp
@@ -177,7 +177,7 @@
             <div class="kz-card h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Monthly Sales (last 12 months)')</h6>
-                    <a href="{{ route('sales.reports') }}" class="kz-link">@lang('kazitds::kazitds.Sales Report')</a>
+                    <a href="{{ route('report.sales') }}" class="kz-link">@lang('kazitds::kazitds.Sales Report')</a>
                 </div>
                 <div class="kz-card-body">
                     <div id="kzMonthlyChart" class="kz-chart" role="img" aria-label="@lang('kazitds::kazitds.Monthly Sales (last 12 months)')"></div>
@@ -379,7 +379,7 @@
                     ['route' => 'products.index', 'icon' => 'box', 'title' => 'Products', 'sub' => 'Manage Products'],
                     ['route' => 'product-variants.index', 'icon' => 'cubes', 'title' => 'Product Variants', 'sub' => 'Manage Product Variants'],
                     ['route' => 'stock.reports', 'icon' => 'warehouse', 'title' => 'Stock', 'sub' => 'View Inventory'],
-                    ['route' => 'sales.reports', 'icon' => 'chart-bar', 'title' => 'Reports', 'sub' => 'Sales and purchase reports'],
+                    ['route' => 'report.sales', 'icon' => 'chart-bar', 'title' => 'Reports', 'sub' => 'Sales and purchase reports'],
                 ];
             @endphp
             <div class="row g-2">

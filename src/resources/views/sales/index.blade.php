@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-<div class="card shadow w-100">
+<div class="card glass-card shadow w-100">
     <div class="card-body">
         <!-- Search/Filter Form -->
         <form method="GET" action="{{ route('sales.index') }}" class="mb-3">
@@ -111,18 +111,18 @@
                             @endif
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center" style="">
-                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-encodex-show me-1 btn-sm " title="@lang("kazitds::kazitds.View")">
-                                        <i class="fas fa-eye "></i>
+                                    <a href="{{ route('sales.show', $sale->id) }}" class="btn btn-encodex-show me-1 btn-sm" title="@lang("kazitds::kazitds.View")">
+                                        <i class="fas fa-eye"></i>
                                     </a>
 
                                     @if(!$sale->returns()->exists())
-                                        <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-encodex-edit me-1 btn-sm " title="@lang("kazitds::kazitds.Edit")">
-                                            <i class="fas fa-edit "></i>
+                                        <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-encodex-edit me-1 btn-sm" title="@lang("kazitds::kazitds.Edit")">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     @endif
 
                                     <a href="{{ route('sales.print-invoice', $sale->id) }}" target="_blank" class="btn btn-encodex-print btn-sm me-1" title="@lang("kazitds::kazitds.Print")">
-                                        <i class="fas fa-print "></i>
+                                        <i class="fas fa-print"></i>
                                     </a>
 
                                     @if(!$sale->returns()->exists())
@@ -130,8 +130,8 @@
                                             @csrf
                                             @method('DELETE')
                                             <button title="@lang("kazitds::kazitds.Delete")" onclick="return confirm('{{ __('kazitds::kazitds.Are you sure you want to delete this?') }}')"
-                                                type="submit" class="btn btn-sm btn-encodex-delete ">
-                                                <i class="fas fa-trash "></i>
+                                                type="submit" class="btn btn-sm btn-encodex-delete">
+                                                <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
                                     @endif

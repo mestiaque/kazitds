@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card glass-card shadow mb-4">
         <div class="card-header bg-primary text-white py-2">
             <h5 class="mb-0">
                 <i class="fas fa-user-circle me-1"></i>
@@ -40,7 +40,7 @@
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <div class="card border-left-primary h-100 mb-0">
+                    <div class="card glass-card border-left-primary h-100 mb-0">
                         <div class="card-body py-3">
                             <div class="text-muted small">@lang('kazitds::kazitds.Total Sale Amount')</div>
                             <div class="fs-5 fw-bold">@lang('kazitds::kazitds.TK.') {{ toBanglaNumber($totalDebit, 2) }}</div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-left-success h-100 mb-0">
+                    <div class="card glass-card border-left-success h-100 mb-0">
                         <div class="card-body py-3">
                             <div class="text-muted small">@lang('kazitds::kazitds.Total Paid Amount')</div>
                             <div class="fs-5 fw-bold text-success">@lang('kazitds::kazitds.TK.') {{ toBanglaNumber($totalCredit, 2) }}</div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-left-info h-100 mb-0">
+                    <div class="card glass-card border-left-info h-100 mb-0">
                         <div class="card-body py-3">
                             <div class="text-muted small">@lang('kazitds::kazitds.Current Due')</div>
                             <div class="fs-5 fw-bold">@lang('kazitds::kazitds.TK.') {{ toBanglaNumber($customer->due_amount, 2) }}</div>

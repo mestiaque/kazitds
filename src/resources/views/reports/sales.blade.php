@@ -3,7 +3,7 @@
 @section('title', trans('kazitds::kazitds.Sales Report'))
 
 @push('buttons')
-  <a href="{{ route('sales.reports.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print" target="_blank">
+  <a href="{{ route('report.sales.print') . '?' . http_build_query(request()->query()) }}" class="btn btn-sm btn-encodex-print" target="_blank">
       <i class="fas fa-print"></i> @lang('kazitds::kazitds.Print')
   </a>
 @endpush
@@ -11,9 +11,9 @@
 @section('content')
 @php $tk = __('kazitds::kazitds.TK.'); @endphp
 
-<div class="card shadow mb-4 w-100">
+<div class="card glass-card shadow mb-4 w-100">
     <div class="card-body">
-        <form method="GET" action="{{ route('sales.reports') }}">
+        <form method="GET" action="{{ route('report.sales') }}">
             <input type="hidden" name="view" value="{{ $view }}">
             <div class="row g-2 mb-3">
                 <div class="col-md-2">
@@ -47,7 +47,7 @@
                     <button type="submit" class="btn btn-sm btn-encodex-search me-1">
                         <i class="fas fa-search me-1"></i> @lang('kazitds::kazitds.Search')
                     </button>
-                    <a href="{{ route('sales.reports', ['view' => $view]) }}" class="btn btn-sm btn-encodex-clear">
+                    <a href="{{ route('report.sales', ['view' => $view]) }}" class="btn btn-sm btn-encodex-clear">
                         <i class="fas fa-eraser me-1"></i> @lang('kazitds::kazitds.Reset')
                     </a>
                 </div>

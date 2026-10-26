@@ -10,7 +10,7 @@
 
 @section('content')
 
-<div class="card shadow mb-4 w-100">
+<div class="card glass-card shadow mb-4 w-100">
     <div class="card-header py-3 bg-info d-none">
         <div class="container-fluid px-0">
             <div class="row align-items-center">

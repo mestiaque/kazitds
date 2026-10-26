@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="container-fluidx">
-    <div class="card shadow mb-4">
+    <div class="card glass-card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-sm table-hover table-encodex">

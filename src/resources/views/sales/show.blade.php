@@ -17,7 +17,7 @@
 @endpush
 
 @section('content')
-<div class="card shadow mb-4">
+<div class="card glass-card shadow mb-4">
     <div class="card-header py-2 bg-primary">
         <div class="row align-items-center">
             <div class="col">

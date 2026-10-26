@@ -61,12 +61,12 @@ Route::middleware(['auth', LocaleMiddleware::class, 'activityLog', 'web'])->grou
     Route::prefix('reports')->group(function () {
         Route::get('stock', [ReportController::class, 'stock'])->name('stock.reports');
         Route::get('stock/print', [ReportController::class, 'printStockReport'])->name('stock.reports.print');
-        Route::get('purchase', [ReportController::class, 'purchases'])->name('purchases.reports');
-        Route::get('purchase/print', [ReportController::class, 'printPurchasesReport'])->name('purchases.reports.print');
-        Route::get('sales', [ReportController::class, 'sales'])->name('sales.reports');
-        Route::get('sales/print', [ReportController::class, 'printSalesReport'])->name('sales.reports.print');
-        Route::get('product-variant-sales', [ReportController::class, 'productVariantSales'])->name('product_variant_sales.reports');
-        Route::get('product-variant-sales/print', [ReportController::class, 'printProductVariantSalesReport'])->name('product_variant_sales.reports.print');
+        Route::get('purchase', [ReportController::class, 'purchases'])->name('report.purchases');
+        Route::get('purchase/print', [ReportController::class, 'printPurchasesReport'])->name('report.purchases.print');
+        Route::get('sales', [ReportController::class, 'sales'])->name('report.sales');
+        Route::get('sales/print', [ReportController::class, 'printSalesReport'])->name('report.sales.print');
+        Route::get('product-variant-sales', [ReportController::class, 'productVariantSales'])->name('report.product_variant_sales');
+        Route::get('product-variant-sales/print', [ReportController::class, 'printProductVariantSalesReport'])->name('report.product_variant_sales.print');
         Route::get('low-stock', [ReportController::class, 'low_stock'])->name('low_stock.reports');
     });
 

@@ -32,7 +32,7 @@
                 <div class="accordion-body">
 
                     {{-- মূল তথ্য --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">১.১ মূল তথ্য</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">মোট পণ্য:</span> সিস্টেমে যোগ হওয়া সব পণ্যের সংখ্যা।</li>
@@ -43,7 +43,7 @@
                     </div>
 
                     {{-- বিক্রয় চিত্র --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">১.২ বিক্রয় চিত্র</div>
                         <div class="card-body point-list">
                             <li>দৈনিক/সাপ্তাহিক বিক্রয় চিত্র আকারে প্রদর্শিত হবে।</li>
@@ -53,7 +53,7 @@
                     </div>
 
                     {{-- সর্বাধিক বিক্রিত পণ্য --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">১.৩ সর্বাধিক বিক্রিত পণ্য</div>
                         <div class="card-body point-list">
                             <li>সর্বাধিক বিক্রিত ৫টি পণ্যের তালিকা।</li>
@@ -63,7 +63,7 @@
                     </div>
 
                     {{-- দ্রুত অ্যাক্সেস --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">১.৪ দ্রুত অ্যাক্সেস</div>
                         <div class="card-body point-list">
                             <li>ড্যাশবোর্ড থেকে সরাসরি পণ্য, ব্র্যান্ড, ক্রয়, বিক্রয়, প্যাক, ভেরিয়েন্ট, স্টক, সেটিংস ইত্যাদিতে যাওয়া যাবে।</li>
@@ -72,7 +72,7 @@
                     </div>
 
                     {{-- সাম্প্রতিক কার্যক্রম --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">১.৫ সাম্প্রতিক কার্যক্রম</div>
                         <div class="card-body point-list">
                             <li>সাম্প্রতিক বিক্রয়: সর্বশেষ ৫টি বিক্রয়, ইনভয়েস, তারিখ, গ্রাহক, টাকা দেখাবে।</li>
@@ -97,7 +97,7 @@
                 <div class="accordion-body">
 
                     {{-- পণ্য --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.১ পণ্য</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন পণ্য:</span> নাম যোগ করা যাবে।</li>
@@ -109,7 +109,7 @@
                     </div>
 
                     {{-- ব্র্যান্ড --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.২ ব্র্যান্ড</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন ব্র্যান্ড:</span> ব্র্যান্ডের নাম লিখে তৈরি করা যাবে।</li>
@@ -121,7 +121,7 @@
                     </div>
 
                     {{-- প্যাক --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.৩ প্যাক</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন প্যাক:</span> নাম লিখে তৈরি করা যাবে।</li>
@@ -133,7 +133,7 @@
                     </div>
 
                     {{-- প্রোডাক্ট ভেরিয়েন্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.৪ ভেরিয়েন্ট</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন ভেরিয়েন্ট:</span> পণ্য, ব্র্যান্ড (ঐচ্ছিক) ও প্যাক নির্বাচন করে তৈরি করা যাবে।</li>
@@ -145,7 +145,7 @@
                     </div>
 
                     {{-- সরবরাহকারী --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.৫ সরবরাহকারী</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন সরবরাহকারী:</span> নাম, কোম্পানি নাম, ফোন, ইমেইল, ঠিকানা ইত্যাদি।</li>
@@ -156,7 +156,7 @@
                     </div>
 
                     {{-- গ্রাহক --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">২.৬ গ্রাহক</div>
                         <div class="card-body point-list">
                             <li><span class="point-title">নতুন গ্রাহক:</span> নাম, ফোন, ইমেইল, ঠিকানা, পাওনা।</li>
@@ -183,7 +183,7 @@
                 <div class="accordion-body">
 
                     {{-- ক্রয় --}}
-                    <div class="card mb-3">
+                    <div class="card glass-card mb-3">
                         <div class="card-header fw-bold">৩.১ ক্রয়</div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>নতুন ক্রয়:</b> সরবরাহকারী নির্বাচন করে পণ্য ও দাম দিতে হবে।</li>
@@ -195,7 +195,7 @@
                     </div>
 
                     {{-- বিক্রয় --}}
-                    <div class="card mb-3">
+                    <div class="card glass-card mb-3">
                         <div class="card-header fw-bold">৩.২ বিক্রয়</div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>নতুন বিক্রয়:</b> গ্রাহক নির্বাচন করে বিক্রয় তৈরি করা যাবে।</li>
@@ -207,7 +207,7 @@
                     </div>
 
                     {{-- পাওনা সংগ্রহ --}}
-                    <div class="card mb-3">
+                    <div class="card glass-card mb-3">
                         <div class="card-header fw-bold">৩.৩ পাওনা সংগ্রহ</div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>ডিউ তালিকা:</b> যেসব গ্রাহকের টাকা বাকি আছে দেখা যাবে।</li>
@@ -233,7 +233,7 @@
                 <div class="accordion-body">
 
                     {{-- স্টক রিপোর্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৪.১ স্টক রিপোর্ট</div>
                         <div class="card-body point-list">
                             <li>সব ভেরিয়েন্টের স্টক দেখা যাবে।</li>
@@ -242,7 +242,7 @@
                     </div>
 
                     {{-- বিক্রয় রিপোর্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৪.২ বিক্রয় রিপোর্ট</div>
                         <div class="card-body point-list">
                             <li>সব বিক্রয় দেখা যাবে।</li>
@@ -251,7 +251,7 @@
                     </div>
 
                     {{-- ক্রয় রিপোর্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৪.৩ ক্রয় রিপোর্ট</div>
                         <div class="card-body point-list">
                             <li>সব ক্রয় দেখা যাবে।</li>
@@ -259,7 +259,7 @@
                     </div>
 
                     {{-- কম স্টক রিপোর্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৪.৪ কম স্টক রিপোর্ট</div>
                         <div class="card-body point-list">
                             <li>কম স্টক আইটেম দেখা যাবে।</li>
@@ -267,7 +267,7 @@
                     </div>
 
                     {{-- এসএমএস রিপোর্ট --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৪.৫ এসএমএস রিপোর্ট</div>
                         <div class="card-body point-list">
                             <li>পাঠানো SMS এর তথ্য দেখা যাবে।</li>
@@ -290,7 +290,7 @@
                 <div class="accordion-body">
 
                     {{-- সাধারণ সেটিংস --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৫.১ সাধারণ সেটিংস</div>
                         <div class="card-body point-list">
                             <li>দোকানের নাম, ঠিকানা, ফোন, ইমেইল সেট করা যাবে।</li>
@@ -298,7 +298,7 @@
                     </div>
 
                     {{-- কম স্টক সতর্কতা --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৫.২ কম স্টক সতর্কতা</div>
                         <div class="card-body point-list">
                             <li>স্টক থ্রেশহোল্ড সেট করা যাবে।</li>
@@ -307,7 +307,7 @@
 
                     {{-- SMS নোটিফিকেশন --}}
                     @if(get_setting('enable_sms'))
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৫.৩ SMS নোটিফিকেশন</div>
                         <div class="card-body point-list">
                             <li>বিক্রয়, পেমেন্ট, রিমাইন্ডার SMS চালু/বন্ধ করা যাবে।</li>
@@ -316,7 +316,7 @@
                     @endif
 
                     {{-- দোকানের লোগো --}}
-                    <div class="card mb-2">
+                    <div class="card glass-card mb-2">
                         <div class="card-header">৫.৪ দোকানের লোগো</div>
                         <div class="card-body point-list">
                             <li>লোগো আপলোড ও প্রিভিউ দেখা যাবে।</li>

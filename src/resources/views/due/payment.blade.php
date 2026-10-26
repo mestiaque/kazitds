@@ -11,7 +11,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-8">
-        <div class="card shadow mb-4 w-100">
+        <div class="card glass-card shadow mb-4 w-100">
             <div class="card-header bg-info text-white p-2">
                 <h5 class="mb-0 d-flex justify-content-between align-items-center">
                     <span>@lang('kazitds::kazitds.Payment History') - {{ $customer->name }}</span>
@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card shadow mb-4">
+        <div class="card glass-card shadow mb-4">
             <div class="card-header p-1 bg-encodex-secondary text-white">
                 <h5 class="mb-0 d-flex justify-content-between align-items-center">
                     <span>@lang('kazitds::kazitds.Make Payment')</span>
