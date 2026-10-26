@@ -34,7 +34,7 @@
     </div>
     <div class="row g-3 mb-4">
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-blue"><i class="fas fa-cash-register"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Sales Today')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($salesToday, 2) }}</div>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-green"><i class="fas fa-hand-holding-usd"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Collection Today')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($collectionToday, 2) }}</div>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-orange"><i class="fas fa-shopping-cart"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Purchases Today')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($purchasesToday, 2) }}</div>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <a href="{{ route('due.index') }}" class="kz-tile kz-tile-link">
+            <a href="{{ route('due.index') }}" class="kz-tile shadow kz-tile-link">
                 <div class="kz-tile-icon kz-icon-red"><i class="fas fa-file-invoice-dollar"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Total Due Receivable')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($totalDue, 2) }}</div>
@@ -81,7 +81,7 @@
     </div>
     <div class="row g-3 mb-4">
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-blue"><i class="fas fa-chart-line"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Sales This Month')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($salesMonth, 2) }}</div>
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-green"><i class="fas fa-coins"></i></div>
                 <div class="kz-tile-label">
                     @lang('kazitds::kazitds.Estimated Gross Profit')
@@ -105,7 +105,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <div class="kz-tile">
+            <div class="kz-tile shadow">
                 <div class="kz-tile-icon kz-icon-violet"><i class="fas fa-receipt"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Invoices This Month')</div>
                 <div class="kz-tile-value">{{ toBanglaNumber($invoicesMonth) }}</div>
@@ -115,7 +115,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
-            <a href="{{ route('stock.reports') }}" class="kz-tile kz-tile-link">
+            <a href="{{ route('stock.reports') }}" class="kz-tile shadow kz-tile-link">
                 <div class="kz-tile-icon kz-icon-aqua"><i class="fas fa-warehouse"></i></div>
                 <div class="kz-tile-label">@lang('kazitds::kazitds.Stock Value')</div>
                 <div class="kz-tile-value">{{ $tk }} {{ toBanglaNumber($stockValue, 2) }}</div>
@@ -129,7 +129,7 @@
     {{-- ================= Trend + top products ================= --}}
     <div class="row g-3 mb-4">
         <div class="col-xl-8">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Sales vs Purchases')</h6>
                     <div class="btn-group btn-group-sm" role="group" aria-label="@lang('kazitds::kazitds.Date range')">
@@ -145,7 +145,7 @@
         </div>
 
         <div class="col-xl-4">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Top Products This Month')</h6>
                     <a href="{{ route('report.product_variant_sales') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
@@ -174,7 +174,7 @@
     {{-- ================= Monthly sales + attention ================= --}}
     <div class="row g-3 mb-4">
         <div class="col-xl-8">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Monthly Sales (last 12 months)')</h6>
                     <a href="{{ route('report.sales') }}" class="kz-link">@lang('kazitds::kazitds.Sales Report')</a>
@@ -186,7 +186,7 @@
         </div>
 
         <div class="col-xl-4">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Needs Attention')</h6>
                 </div>
@@ -219,7 +219,7 @@
     {{-- ================= Due customers + low stock ================= --}}
     <div class="row g-3 mb-4">
         <div class="col-lg-6">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Highest Customer Dues')</h6>
                     <a href="{{ route('due.index') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
@@ -254,7 +254,7 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Low Stock Items')</h6>
                     <a href="{{ route('low_stock.reports') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
@@ -296,7 +296,7 @@
     {{-- ================= Recent activity ================= --}}
     <div class="row g-3 mb-4">
         <div class="col-lg-6">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Recent Sales')</h6>
                     <a href="{{ route('sales.index') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
@@ -329,7 +329,7 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="kz-card h-100">
+            <div class="kz-card shadow h-100">
                 <div class="kz-card-header">
                     <h6>@lang('kazitds::kazitds.Recent Purchases')</h6>
                     <a href="{{ route('purchases.index') }}" class="kz-link">@lang('kazitds::kazitds.View All')</a>
@@ -365,7 +365,7 @@
     </div>
 
     {{-- ================= Quick access ================= --}}
-    <div class="kz-card mb-4">
+    <div class="kz-card shadow mb-4">
         <div class="kz-card-header">
             <h6>@lang('kazitds::kazitds.Quick Access')</h6>
         </div>
@@ -385,7 +385,7 @@
             <div class="row g-2">
                 @foreach($shortcuts as $shortcut)
                     <div class="col-xl-3 col-md-4 col-6">
-                        <a href="{{ route($shortcut['route']) }}" class="kz-shortcut">
+                        <a href="{{ route($shortcut['route']) }}" class="kz-shortcut shadow-sm">
                             <i class="fas fa-{{ $shortcut['icon'] }}"></i>
                             <span>
                                 <span class="d-block fw-bold">{{ __('kazitds::kazitds.' . $shortcut['title']) }}</span>

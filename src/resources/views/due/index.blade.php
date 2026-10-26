@@ -7,20 +7,20 @@
 
 <div class="row g-3 mb-3">
     <div class="col-md-4">
-        <div class="card glass-card h-100 p-3">
+        <div class="card glass-card h-100 p-3 shadow">
             <div class="small text-muted text-uppercase fw-semibold">@lang('kazitds::kazitds.Total Due Receivable')</div>
             <div class="h4 fw-bold mb-0 text-danger">{{ $tk }} {{ toBanglaNumber($totalDue, 2) }}</div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card glass-card h-100 p-3">
+        <div class="card glass-card h-100 p-3 shadow">
             <div class="small text-muted text-uppercase fw-semibold">@lang('kazitds::kazitds.Customers with due')</div>
             <div class="h4 fw-bold mb-0">{{ toBanglaNumber($dueCustomerCount) }}</div>
         </div>
     </div>
     @if($isFiltered)
         <div class="col-md-4">
-            <div class="card glass-card h-100 p-3">
+            <div class="card glass-card h-100 p-3 shadow">
                 <div class="small text-muted text-uppercase fw-semibold">@lang('kazitds::kazitds.Due in this search')</div>
                 <div class="h4 fw-bold mb-0 text-primary">{{ $tk }} {{ toBanglaNumber($filteredDue, 2) }}</div>
                 <div class="small text-muted">@lang('kazitds::kazitds.Customers'): {{ toBanglaNumber($customers->total()) }}</div>
