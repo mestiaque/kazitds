@@ -91,7 +91,7 @@
                         <!-- Removed item-wise discount column -->
                         <th width="15%">@lang('kazitds::kazitds.Total')</th>
                         <th width="5%" class="text-end">
-                            <button type="button" class="btn btn-sm btn-success" title="@lang('kazitds::kazitds.Add Item')" id="add_item">
+                            <button type="button" class="btn btn-sm btn-encodex-save" title="@lang('kazitds::kazitds.Add Item')" id="add_item">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </th>
@@ -136,7 +136,7 @@
                                     <input type="text" class="form-control form-control-sm item-total text-end" value="{{ $item->total_price }}" readonly>
                                 </td>
                                 <td class="text-end">
-                                    <button type="button" class="btn btn-sm btn-danger remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-sm btn-encodex-delete remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -166,7 +166,7 @@
                                 <input type="text" class="form-control form-control-sm item-total text-end" value="0.00" readonly>
                             </td>
                             <td class="text-end">
-                                <button type="button" class="btn btn-sm btn-danger remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-sm btn-encodex-delete remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
                             </td>
                         </tr>
                     @endif
@@ -371,7 +371,7 @@ $(document).ready(function() {
                     <input type="text" class="form-control form-control-sm item-total text-end" value="0.00" readonly>
                 </td>
                 <td class="text-end">
-                    <button type="button" class="btn btn-sm btn-danger remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
+                    <button type="button" class="btn btn-sm btn-encodex-delete remove-row float-end" title="@lang("kazitds::kazitds.Remove Item")"><i class="fas fa-times"></i></button>
                 </td>
             </tr>
         `;
