@@ -220,7 +220,10 @@ class SaleController extends Controller
             }
 
             app(CustomerSaleLedgerService::class)->recalculateForCustomer($customer->id);
-            $dueAmount = (float) (Due::where('sale_id', $sale->id)->value('total_due') ?? 0);
+            $saleDue = Due::where('sale_id', $sale->id)->first();
+            $dueAmount = (float) ($saleDue?->total_due ?? 0);
+            // Grand total for SMS: this invoice's net amount plus carried-forward previous due
+            $grandTotal = (float) $sale->net_amount + (float) ($saleDue?->previous_due ?? 0);
 
 
             DB::commit();
@@ -228,7 +231,7 @@ class SaleController extends Controller
             if($customer && $customer->phone){
                 if (isset(get_setting('sms_permit')['create']) && get_setting('sms_permit')['create'] == 1) {
                     if ($dueAmount > 0 && $request->input('sms')) {
-                        SmsNotifier::newSaleCreate($customer, $totalAmount, $request->payment ?? 0, $dueAmount);
+                        SmsNotifier::newSaleCreate($customer, $grandTotal, $request->payment ?? 0, $dueAmount);
                     }
                 }
             }
@@ -411,13 +414,16 @@ class SaleController extends Controller
             if ($oldCustomerId && $oldCustomerId !== $customerId) {
                 app(CustomerSaleLedgerService::class)->recalculateForCustomer($oldCustomerId);
             }
-            $dueAmount = (float) (Due::where('sale_id', $sale->id)->value('total_due') ?? 0);
+            $saleDue = Due::where('sale_id', $sale->id)->first();
+            $dueAmount = (float) ($saleDue?->total_due ?? 0);
+            // Grand total for SMS: this invoice's net amount plus carried-forward previous due
+            $grandTotal = (float) $sale->net_amount + (float) ($saleDue?->previous_due ?? 0);
 
             DB::commit();
 
             if (isset(get_setting('sms_permit')['edit']) && get_setting('sms_permit')['edit'] == 1) {
                 if ($dueAmount > 0 && $request->input('sms')) {
-                    SmsNotifier::newSaleCreate($customer, $totalAmount, $request->payment ?? 0, $dueAmount);
+                    SmsNotifier::newSaleCreate($customer, $grandTotal, $request->payment ?? 0, $dueAmount);
                 }
             }
 
